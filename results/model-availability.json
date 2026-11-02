@@ -1,0 +1,22 @@
+[
+  {
+    "requested": "gpt-4.1-2025-04-14",
+    "available": true,
+    "returned_id": "gpt-4.1-2025-04-14"
+  },
+  {
+    "requested": "gpt-5-2025-08-07",
+    "available": true,
+    "returned_id": "gpt-5-2025-08-07"
+  },
+  {
+    "requested": "gpt-5.6-sol",
+    "available": true,
+    "returned_id": "gpt-5.6-sol"
+  },
+  {
+    "requested": "gpt-6.1-sol",
+    "available": true,
+    "returned_id": "gpt-6.1-sol"
+  }
+]

@@ -1,0 +1,946 @@
+{
+  "status": "30 inherited candidates; only explicitly prepared tasks are runnable",
+  "tasks": [
+    {
+      "benchmark_id": "A09",
+      "title": "Frame-level social behavior labels",
+      "category": "A",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/A09",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "VASSI",
+          "urls": [
+            "https://elifesciences.org/reviewed-preprints/108329"
+          ]
+        },
+        {
+          "name": "MABe2021 Top-1 ensemble",
+          "urls": [
+            "https://sites.google.com/view/computational-behavior/our-datasets/calms21-dataset",
+            "https://github.com/nebw/mabe"
+          ]
+        },
+        {
+          "name": "TREBA + pose classifier",
+          "urls": [
+            "https://github.com/neuroethology/TREBA"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "A14",
+      "title": "Missing pose imputation",
+      "category": "A",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/A14",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "DISK Transformer / bidirectional GRU",
+          "urls": [
+            "https://www.nature.com/articles/s41592-025-02893-y",
+            "https://github.com/bozeklab/DISK",
+            "https://github.com/bozeklab/DISK_paper_code"
+          ]
+        },
+        {
+          "name": "MarkerBasedImputation / OptiPose / Keypoint-MoSeq",
+          "urls": [
+            "https://www.nature.com/articles/s41592-025-02893-y"
+          ]
+        },
+        {
+          "name": "DANNCE",
+          "urls": [
+            "https://www.nature.com/articles/s41592-021-01106-6"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "A15",
+      "title": "Annotated birdsong interval detection",
+      "category": "A",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/A15",
+      "status": "deferred_input_modality_and_size",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "DAS",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8560090/",
+            "https://github.com/janclemenslab/das"
+          ]
+        },
+        {
+          "name": "TweetyNet",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8860439/"
+          ]
+        },
+        {
+          "name": "WhisperSeg",
+          "urls": [
+            "https://github.com/nianlonggu/WhisperSeg"
+          ]
+        }
+      ],
+      "reason": "Requested models have no native audio input; full waveform-as-text feasibility needs a separate audit. No spectrogram substitution is silently made."
+    },
+    {
+      "benchmark_id": "B01",
+      "title": "Spike sorting and event detection",
+      "category": "B",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/B01",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Kilosort4",
+          "urls": [
+            "https://www.nature.com/articles/s41592-024-02232-7",
+            "https://github.com/MouseLand/Kilosort"
+          ]
+        },
+        {
+          "name": "DARTsort",
+          "urls": [
+            "https://github.com/cwindolf/dartsort"
+          ]
+        },
+        {
+          "name": "MountainSort5",
+          "urls": [
+            "https://github.com/flatironinstitute/mountainsort5"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "B03",
+      "title": "Rigid drift recovery from synthetic ephys rasters",
+      "category": "B",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/B03",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Current DREDge AP",
+          "urls": [
+            "https://www.nature.com/articles/s41592-025-02614-5",
+            "https://github.com/evarol/dredge",
+            "https://github.com/SpikeInterface/spikeinterface/blob/main/src/spikeinterface/sortingcomponents/motion/dredge.py",
+            "https://github.com/SpikeInterface/spikeinterface/blob/main/src/spikeinterface/preprocessing/motion.py"
+          ]
+        },
+        {
+          "name": "MEDiCINe rigid",
+          "urls": [
+            "https://www.eneuro.org/content/12/3/ENEURO.0529-24.2025",
+            "https://github.com/jazlab/medicine"
+          ]
+        },
+        {
+          "name": "Kilosort4 datashift",
+          "urls": [
+            "https://github.com/MouseLand/Kilosort",
+            "https://www.eneuro.org/content/12/3/ENEURO.0529-24.2025"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "B07",
+      "title": "Lossless Neuropixels voltage compression",
+      "category": "B",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/B07",
+      "status": "deferred_direct_bitstream_output_budget",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "WavPack high/very-high with extra processing",
+          "urls": [
+            "https://www.biorxiv.org/content/10.1101/2023.05.22.541700v2",
+            "https://github.com/AllenNeuralDynamics/ephys-compression",
+            "https://github.com/dbry/WavPack/blob/master/doc/wavpack_doc.html",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC13441294/"
+          ]
+        },
+        {
+          "name": "FLAC",
+          "urls": [
+            "https://www.biorxiv.org/content/10.1101/2023.05.22.541700v2",
+            "https://github.com/AllenNeuralDynamics/ephys-compression",
+            "https://github.com/AllenNeuralDynamics/aind-capsule-ephys-compression-results"
+          ]
+        },
+        {
+          "name": "Blosc/Zstd with reversible time/space delta",
+          "urls": [
+            "https://github.com/AllenNeuralDynamics/ephys-compression"
+          ]
+        }
+      ],
+      "reason": "Exact compression bitstream generation at the retained recording size is not a bounded direct-prediction pilot; no generated codec will be executed."
+    },
+    {
+      "benchmark_id": "B08",
+      "title": "Timing-bounded spike-event compression",
+      "category": "B",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/B08",
+      "status": "deferred_direct_bitstream_output_budget",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Spikepack Blosc-shard",
+          "urls": [
+            "https://github.com/int-brain-lab/spikepack",
+            "https://int-brain-lab.github.io/spikepack/explanation/benchmark.html"
+          ]
+        },
+        {
+          "name": "Spikepack Zarr container",
+          "urls": [
+            "https://github.com/int-brain-lab/spikepack",
+            "https://int-brain-lab.github.io/spikepack/explanation/benchmark.html"
+          ]
+        },
+        {
+          "name": "Per-unit delta + entropy coding",
+          "urls": [
+            "https://github.com/int-brain-lab/spikepack"
+          ]
+        }
+      ],
+      "reason": "Exact compression bitstream generation at the retained recording size is not a bounded direct-prediction pilot; no generated codec will be executed."
+    },
+    {
+      "benchmark_id": "C05",
+      "title": "Calcium-to-spike inference",
+      "category": "C",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/C05",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "CASCADE / CascadeTorch",
+          "urls": [
+            "https://github.com/HelmchenLabSoftware/Cascade",
+            "https://github.com/PTRRupprecht/CascadeTorch",
+            "https://www.nature.com/articles/s41592-026-03183-x"
+          ]
+        },
+        {
+          "name": "ENS2",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10261900/",
+            "https://github.com/TinLab/ENS2"
+          ]
+        },
+        {
+          "name": "SpikeSSL",
+          "urls": [
+            "https://arxiv.org/abs/2610.11456",
+            "https://arxiv.org/html/2610.11456v1",
+            "https://github.com/detimage123/SpikeSSL"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "C06",
+      "title": "Calcium to electrical expected spike counts",
+      "category": "C",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/C06",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "CASCADE / CascadeTorch",
+          "urls": [
+            "https://github.com/HelmchenLabSoftware/Cascade",
+            "https://github.com/PTRRupprecht/CascadeTorch",
+            "https://www.nature.com/articles/s41592-026-03183-x"
+          ]
+        },
+        {
+          "name": "ENS2",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC10261900/",
+            "https://github.com/TinLab/ENS2"
+          ]
+        },
+        {
+          "name": "SpikeSSL",
+          "urls": [
+            "https://arxiv.org/abs/2610.11456",
+            "https://arxiv.org/html/2610.11456v1",
+            "https://github.com/detimage123/SpikeSSL"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "D02",
+      "title": "Current-to-voltage prediction",
+      "category": "D",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/D02",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Training-only passive RC / constrained multi-exponential response",
+          "urls": [
+            "https://brain-map.org/support/documentation/documentation-cell-types-database"
+          ]
+        },
+        {
+          "name": "Allen GLIF and perisomatic/all-active models",
+          "urls": [
+            "https://brain-map.org/support/documentation/documentation-cell-types-database",
+            "https://celltypes.brain-map.org/",
+            "https://www.nature.com/articles/s41467-017-02717-4"
+          ]
+        },
+        {
+          "name": "CoMParE",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC13252523/",
+            "https://github.com/xanderladd/axonstandardized"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "E01",
+      "title": "Neural rate inference and co-smoothing",
+      "category": "E",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/E01",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "LangevinFlow",
+          "urls": [
+            "https://arxiv.org/html/2507.11531v2",
+            "https://github.com/KingJamesSong/LangevinFlow_CCN"
+          ]
+        },
+        {
+          "name": "AutoLFADS / NDT / STNDT / RNN_F",
+          "urls": [
+            "https://neurallatents.github.io/challenge.html",
+            "https://github.com/neurallatents/nlb_tools"
+          ]
+        },
+        {
+          "name": "S5",
+          "urls": [
+            "https://neurallatents.github.io/challenge.html"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "E06",
+      "title": "Causal population calcium forecasting",
+      "category": "E",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/E06",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "POCO",
+          "urls": [
+            "https://proceedings.neurips.cc/paper_files/paper/2025/file/21fbf654963f9e455e8eec48e45bdea0-Paper-Conference.pdf",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC13151936/"
+          ]
+        },
+        {
+          "name": "Time-Mix / TSMixer / TiDE",
+          "urls": [
+            "https://arxiv.org/html/2503.02618v1",
+            "https://google-research.github.io/zapbench/",
+            "https://github.com/google-research/zapbench"
+          ]
+        },
+        {
+          "name": "Volumetric U-Net",
+          "urls": [
+            "https://arxiv.org/html/2503.02618v1",
+            "https://google-research.github.io/zapbench/",
+            "https://github.com/google-research/zapbench"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "F04",
+      "title": "Retinal or other sensory encoding",
+      "category": "F",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/F04",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Goldin source CNN / contrast-sensitive encoding models",
+          "urls": [
+            "https://www.nature.com/articles/s41467-022-33242-8",
+            "https://github.com/samuelevirgili/Context-dependent-selectivity-to-natural-images-in-the-retina",
+            "https://open-retina.org/api_reference/data_io/goldin_2022/"
+          ]
+        },
+        {
+          "name": "OpenRetina core/readout CNN",
+          "urls": [
+            "https://open-retina.org/api_reference/data_io/goldin_2022/",
+            "https://open-retina.org/package_docs/model_zoo/",
+            "https://github.com/open-retina/open-retina",
+            "https://open-retina.org/package_docs/training/core_readout/"
+          ]
+        },
+        {
+          "name": "Regularized LN/Poisson GLM",
+          "urls": [
+            "https://open-retina.org/package_docs/training/core_readout/"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "G01",
+      "title": "Robust cross-day motor decoding",
+      "category": "G",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/G01",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "NDT3 pretrained transformer",
+          "urls": [
+            "https://github.com/joel99/ndt3/blob/main/model_card.md"
+          ]
+        },
+        {
+          "name": "SPINT",
+          "urls": [
+            "https://arxiv.org/html/2507.08402v1"
+          ]
+        },
+        {
+          "name": "APST",
+          "urls": [
+            "https://arxiv.org/abs/2609.39080"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "H01",
+      "title": "Motor imagery and noninvasive BCI",
+      "category": "H",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/H01",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "CBraMod",
+          "urls": [
+            "https://proceedings.iclr.cc/paper_files/paper/2025/hash/bbbd6d915cb90be21c1254a82d45cedd-Abstract-Conference.html"
+          ]
+        },
+        {
+          "name": "REVE",
+          "urls": [
+            "https://brain-bzh.github.io/reve/",
+            "https://huggingface.co/brain-bzh/reve-base"
+          ]
+        },
+        {
+          "name": "MIRepNet",
+          "urls": [
+            "https://arxiv.org/abs/2507.20254"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "H02",
+      "title": "ERP/P300 target decoding",
+      "category": "H",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/H02",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "xDAWN covariance → tangent-space SVM",
+          "urls": [
+            "https://moabb.neurotechx.com/docs/paper_results.html",
+            "https://arxiv.org/abs/2404.15319"
+          ]
+        },
+        {
+          "name": "Riemannian Means Field classifier with xDAWN",
+          "urls": [
+            "https://www.mdpi.com/1424-8220/25/7/2305"
+          ]
+        },
+        {
+          "name": "CBraMod / REVE ERP fine-tuning",
+          "urls": [
+            "https://proceedings.iclr.cc/paper_files/paper/2025/hash/bbbd6d915cb90be21c1254a82d45cedd-Abstract-Conference.html",
+            "https://brain-bzh.github.io/reve/",
+            "https://arxiv.org/abs/2601.17883"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "H08",
+      "title": "Sleep staging and sleep onset",
+      "category": "H",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/H08",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "SleepGPT",
+          "urls": [
+            "https://www.nature.com/articles/s41467-025-67970-4"
+          ]
+        },
+        {
+          "name": "SleepFM-Clinical",
+          "urls": [
+            "https://github.com/zou-group/sleepfm-clinical"
+          ]
+        },
+        {
+          "name": "SleepFM-2",
+          "urls": [
+            "https://arxiv.org/abs/2609.06849"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "H16",
+      "title": "EEG ocular/muscle artifact repair",
+      "category": "H",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/H16",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "EEGdenoiseNet original CNN/RNN models",
+          "urls": [
+            "https://doi.org/10.1088/1741-2552/ac2bf8"
+          ]
+        },
+        {
+          "name": "Gated WGAN with multi-scale/multi-domain features",
+          "urls": [
+            "https://www.mdpi.com/2076-3425/16/10/1124"
+          ]
+        },
+        {
+          "name": "FARU-Net",
+          "urls": [
+            "https://www.mdpi.com/2073-8994/18/6/988"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "I07",
+      "title": "fNIRS motor/hemodynamic decoding",
+      "category": "I",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/I07",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "MtReNIRS",
+          "urls": [
+            "https://arxiv.org/abs/2610.36159"
+          ]
+        },
+        {
+          "name": "67-dataset fNIRS corpus/dataloaders",
+          "urls": [
+            "https://arxiv.org/abs/2610.40277"
+          ]
+        },
+        {
+          "name": "Training-only regularized OD temporal decoder / SVM",
+          "urls": [
+            "https://openfnirs.org/community/fresh/welcome-to-the-fnirs-fresh-project/",
+            "https://www.nature.com/articles/s42003-025-08412-1"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "I10",
+      "title": "MRI quality assessment across sites",
+      "category": "I",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/I10",
+      "status": "prepared_full_test_prediction_requests",
+      "protocol_status": "retained_custom_protocol_fallback",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Archived original MRIQC classifier, locally rescored",
+          "urls": [
+            "https://doi.org/10.1371/journal.pone.0184661",
+            "https://github.com/nipreps/mriqc"
+          ]
+        },
+        {
+          "name": "TabPFN-3.5",
+          "urls": [
+            "https://arxiv.org/abs/2609.17895",
+            "https://github.com/PriorLabs/TabPFN"
+          ]
+        },
+        {
+          "name": "TabICLv2",
+          "urls": [
+            "https://arxiv.org/abs/2602.11139",
+            "https://github.com/soda-inria/tabicl"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "J08",
+      "title": "Fluorescent synaptic puncta segmentation and quantification",
+      "category": "J",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/J08",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Archived SynAPSeg 2D StarDist predictions",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC13432752/"
+          ]
+        },
+        {
+          "name": "SynAPSeg fine-tuned Cellpose-SAM",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC13432752/",
+            "https://www.biorxiv.org/content/10.1101/2025.04.28.651001v1"
+          ]
+        },
+        {
+          "name": "Cellpose-SAM v2 / CellposeDINO",
+          "urls": [
+            "https://cellpose.readthedocs.io/en/latest/models.html"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "K01",
+      "title": "Electrophysiological cell-type classification",
+      "category": "K",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K01",
+      "status": "prepared_full_test_prediction_requests",
+      "protocol_status": "retained_custom_protocol_fallback",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "TabPFN-3.5",
+          "urls": [
+            "https://arxiv.org/abs/2609.17895",
+            "https://github.com/PriorLabs/TabPFN"
+          ]
+        },
+        {
+          "name": "TabICLv2",
+          "urls": [
+            "https://arxiv.org/abs/2602.11139",
+            "https://github.com/soda-inria/tabicl"
+          ]
+        },
+        {
+          "name": "Regularized boosted-tree / kernel classifier panel",
+          "urls": [
+            "https://arxiv.org/abs/2602.11139"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "K04",
+      "title": "Cortical-layer label transfer",
+      "category": "K",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K04",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "SingleR 0.5.0 frozen reference; later release/tuning separate",
+          "urls": [
+            "https://singler-inc.github.io/singler-py/api/singler.html"
+          ]
+        },
+        {
+          "name": "scGPT / Nicheformer expression representations",
+          "urls": [
+            "https://www.nature.com/articles/s41592-025-02814-z",
+            "https://arxiv.org/abs/2607.17227"
+          ]
+        },
+        {
+          "name": "Novae / GraphST / spatial domain models",
+          "urls": [
+            "https://arxiv.org/abs/2607.17227",
+            "https://www.nature.com/articles/s41592-026-03194-8"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "K05",
+      "title": "Supervised bulk RNA to marker-positive fractions",
+      "category": "K",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K05",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "BisqueRNA / hspe with Mean Ratio markers",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11978107/",
+            "https://bioconductor.org/packages/release/bioc/html/DeconvoBuddies.html"
+          ]
+        },
+        {
+          "name": "DECONVersation with Geneformer / Cell2Sentence embeddings",
+          "urls": [
+            "https://www.biorxiv.org/content/10.64898/2026.10.02.756356v1.full"
+          ]
+        },
+        {
+          "name": "BayesPrism / InstaPrism, MuSiC, CIBERSORTx",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11978107/",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11245312/"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "K06",
+      "title": "Optotagged PV/SST classification from waveform",
+      "category": "K",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K06",
+      "status": "prepared_full_test_prediction_requests",
+      "protocol_status": "retained_custom_protocol_fallback",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "WaveMAP plus training-only supervised label transfer",
+          "urls": [
+            "https://elifesciences.org/articles/67490"
+          ]
+        },
+        {
+          "name": "CEED waveform encoder",
+          "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC12373126/"
+          ]
+        },
+        {
+          "name": "PhysMAP waveform-only ablation",
+          "urls": [
+            "https://www.nature.com/articles/s41467-026-71331-0"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "L04",
+      "title": "Point-process estimation and goodness of fit",
+      "category": "L",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/L04",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "NeMoS spline/tensor-product Poisson GLM",
+          "urls": [
+            "https://github.com/flatironinstitute/nemos",
+            "https://nemos-neuro.org/en/stable/quickstart.html"
+          ]
+        },
+        {
+          "name": "Poisson generalized additive model with direction interaction",
+          "urls": [
+            "https://github.com/flatironinstitute/nemos"
+          ]
+        },
+        {
+          "name": "Spike-history / population latent neural models",
+          "urls": [
+            "https://github.com/flatironinstitute/nemos"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "L06",
+      "title": "Spiking-neuron posterior inference",
+      "category": "L",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/L06",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Independent NUTS/HMC on exact logistic likelihood",
+          "urls": [
+            "https://github.com/sbi-benchmark/sbibm",
+            "https://proceedings.mlr.press/v130/lueckmann21a.html"
+          ]
+        },
+        {
+          "name": "Longer independently initialized Polya–Gamma chains",
+          "urls": [
+            "https://github.com/sbi-benchmark/sbibm"
+          ]
+        },
+        {
+          "name": "sbi FMPE / NPSE / NPE",
+          "urls": [
+            "https://sbi.readthedocs.io/en/stable/how_to_guide/06_choosing_inference_method.html"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "M01",
+      "title": "Conditional mouse-choice prediction",
+      "category": "M",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/M01",
+      "status": "prepared_full_test_prediction_requests",
+      "protocol_status": "retained_custom_protocol_fallback",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Regularized multi-lag task-specific behavioral GLM",
+          "urls": [
+            "https://github.com/int-brain-lab/behavior_models",
+            "https://vocal.gatsby.ucl.ac.uk/~pel/papers/prior_ibl_2025.pdf"
+          ]
+        },
+        {
+          "name": "IBL ActionKernel / StimulusKernel / OptimalBayesian models",
+          "urls": [
+            "https://github.com/int-brain-lab/behavior_models",
+            "https://vocal.gatsby.ucl.ac.uk/~pel/papers/prior_ibl_2025.pdf"
+          ]
+        },
+        {
+          "name": "PsyTrack / GLM-HMM strategy model",
+          "urls": [
+            "https://github.com/nicholas-roy/psytrack",
+            "https://www.nature.com/articles/s41593-021-01007-z.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "M04",
+      "title": "Cognitive model and parameter recovery",
+      "category": "M",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/M04",
+      "status": "adapter_or_resource_review_pending",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Exact-likelihood bounded quadrature posterior median",
+          "urls": [
+            "https://elifesciences.org/articles/49547"
+          ]
+        },
+        {
+          "name": "HSSM choice-only RL/custom likelihood",
+          "urls": [
+            "https://github.com/lnccbrown/HSSM/releases",
+            "https://lnccbrown.github.io/HSSM/"
+          ]
+        },
+        {
+          "name": "BayesFlow 2 / sbi posterior estimator",
+          "urls": [
+            "https://arxiv.org/abs/2306.16015",
+            "https://sbi.readthedocs.io/en/stable/how_to_guide/06_choosing_inference_method.html",
+            "https://arxiv.org/abs/2602.07098"
+          ]
+        }
+      ]
+    },
+    {
+      "benchmark_id": "N05",
+      "title": "NWB data loading, units and reproducibility",
+      "category": "N",
+      "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/N05",
+      "status": "deferred_native_file_interface",
+      "protocol_status": "official_protocol_restoration_candidate",
+      "specialist_status": "no_verified_matching_current_best_published_score",
+      "candidate_sources": [
+        {
+          "name": "Direct HDF5 extraction with independent unit/timing implementation",
+          "urls": [
+            "https://github.com/NeurodataWithoutBorders/pynwb/blob/dev/CHANGELOG.md"
+          ]
+        },
+        {
+          "name": "PyNWB current validated I/O",
+          "urls": [
+            "https://pynwb.readthedocs.io/en/stable/validation.html",
+            "https://github.com/NeurodataWithoutBorders/pynwb/blob/dev/CHANGELOG.md"
+          ]
+        },
+        {
+          "name": "NWBInspector",
+          "urls": [
+            "https://github.com/NeurodataWithoutBorders/nwbinspector",
+            "https://pynwb.readthedocs.io/en/stable/validation.html"
+          ]
+        }
+      ],
+      "reason": "A general model cannot directly consume this binary NWB through the text/image-only prediction interface; an extraction tool would change the no-tools condition."
+    }
+  ]
+}

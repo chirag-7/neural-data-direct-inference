@@ -1,0 +1,28 @@
+{
+  "source_data_path": "/Users/chiragchivate/Documents/Codex/2026-10-30/https-sites-stat-columbia-edu-liam/outputs/neural-data-bench/data/cache/K01/data.npz",
+  "source_data_sha256": "932646e486e69d608258e44c7e5f0f99d9b83821c0b224074d5764312ea47f47",
+  "metadata_sha256": "45429e498c59f08a1e7d5e16ebc0d3f5c4415260726f434036bb04cf8e3ce00c",
+  "n_test": 457,
+  "test_shape": [
+    457,
+    11
+  ],
+  "selection": "Every retained test row in original order; no test outcome selection.",
+  "numeric_serialization": "Python JSON float representation, no numeric rounding; nonfinite inputs represented by null.",
+  "features": [
+    "ef__adaptation",
+    "ef__avg_firing_rate",
+    "ef__avg_isi",
+    "ef__f_i_curve_slope",
+    "ef__fast_trough_v_long_square",
+    "ef__peak_t_ramp",
+    "ef__ri",
+    "ef__tau",
+    "ef__threshold_i_long_square",
+    "ef__upstroke_downstroke_ratio_long_square",
+    "ef__vrest"
+  ],
+  "source_study": "Neuroscience Analysis Code Generation; cached input reuse only",
+  "protocol_status": "Explicit custom-protocol fallback; no official protocol restoration claimed.",
+  "source_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K01"
+}
