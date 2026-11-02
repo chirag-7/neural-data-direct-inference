@@ -6,7 +6,7 @@ General models receive neuroscience inputs and return **actual predictions**. No
 
 **10 benchmarks complete across four models, across 8 broad categories.** An 11th task, calcium-to-spike inference, has incomplete GPT-5 and GPT-6.1 Sol panels. The user reduced scope from30 inherited candidates to approximately 10–15 completed benchmarks; 19 remaining candidates are explicitly deferred rather than padded with partial scores or claims of model inability.
 
-[Primary scores](results/primary-report.md) · [Descriptive analysis](analysis/README.md) · [Per-task directory](experiments) · [Methods](docs/methods.md) · [Validation](results/validation.json)
+[Results website](https://neural-data-direct-inference.almondkoala21.chatgpt.site) · [Primary scores](results/primary-report.md) · [Descriptive analysis](analysis/README.md) · [Per-task directory](experiments) · [Methods](docs/methods.md) · [Validation](results/validation.json)
 
 Models: GPT-4.1 (`gpt-4.1-2025-04-14`), GPT-5 (`gpt-5-2025-08-07`), GPT-5.6 Sol and GPT-6.1 Sol.
 
@@ -58,3 +58,5 @@ python3 scripts/validate_study.py
 Use the pinned numerical dependencies in `requirements.txt`. Input preparation never reads test targets. The scorer validates IDs, dimensions, finite values, task bounds and complete coverage; reference rescoring uses the same native target/aggregation contracts. The website is buildless; preview with `python3 -m http.server --directory web`.
 
 The conservative new-study API cost upper bound is approximately **$19.15**, including discarded Sol API calls, below the approved **$20 total cap**. It assumes uncached/cache-write pricing and is not an invoice; actual billing may be lower. Codex subscription usage is separate. Credentials are memory-only, never committed. No further paid inference is planned at this stopping point.
+
+The results website is owner-private. [Deployment identity and asset hashes](docs/site-deployment.json) link the deployed Site snapshot to the reviewed `web/` source. Temporary API access was stopped at the pilot endpoint and its in-memory credential cleared.

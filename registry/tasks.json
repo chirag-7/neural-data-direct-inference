@@ -298,7 +298,7 @@
         }
       ],
       "run_report": "experiments/C06/run-report.md",
-      "reason": "GPT-5 dense outputs truncated; further recovery not completed within the cumulative study cap."
+      "reason": "GPT-5 dense outputs truncated with further recovery deferred under the remaining study budget; GPT-6.1 Sol timed out on one recording at600seconds with both medium and low reasoning."
     },
     {
       "benchmark_id": "D02",
