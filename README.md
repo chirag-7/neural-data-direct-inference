@@ -60,3 +60,14 @@ Use the pinned numerical dependencies in `requirements.txt`. Input preparation n
 The conservative new-study API cost upper bound is approximately **$19.15**, including discarded Sol API calls, below the approved **$20 total cap**. It assumes uncached/cache-write pricing and is not an invoice; actual billing may be lower. Codex subscription usage is separate. Credentials are memory-only, never committed. No further paid inference is planned at this stopping point.
 
 The results website is owner-private. [Deployment identity and asset hashes](docs/site-deployment.json) link the deployed Site snapshot to the reviewed `web/` source. Temporary API access was stopped at the pilot endpoint and its in-memory credential cleared.
+
+## Results explorer analysis
+
+The direct-inference website uses the original study’s explorer layout and chart components, with independently derived direct-inference scores. Ten complete four-model tasks across seven categories enter the macro tables; C06 remains separately visible with partial coverage.
+
+- [All pair/lag and specialist comparison tables](analysis/explorer-analysis.md)
+- [Generation lags, native differences and IQR bands](analysis/generation-lags-v1/)
+- [Best-general versus measured specialists and all references](analysis/specialist-frontier-v1/)
+- [Task classification rationale](docs/task-classification/README.md)
+
+Rebuild with `python scripts/build_explorer_analysis.py` after `scripts/build_site_data.py` has produced the canonical task payload. The latter now calls the explorer analysis builder automatically. No model calls are needed for this analysis. IQR bands are descriptive sensitivities, not statistical equivalence or significance.

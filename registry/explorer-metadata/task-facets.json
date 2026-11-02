@@ -1,0 +1,419 @@
+{
+  "version": "task-facets-v1",
+  "reviewed_on": "2026-11-01",
+  "status": "Author-assigned protocol annotations; literature-informed, not a validated community ontology.",
+  "scope": "92 active entries; executed annotations describe the 30 measured custom protocols, proposed annotations describe 62 unexecuted plans.",
+  "vocabulary": {
+    "input_type": {
+      "images_video": {
+        "label": "Images & video",
+        "definition": "Spatial pixels or voxels, including microscopy, MRI, multiview cameras and functional movies."
+      },
+      "physiological_signals": {
+        "label": "Physiological signals",
+        "definition": "Sampled electrical, optical or hemodynamic traces, including current, voltage, EEG/MEG/EMG, fluorescence and LFP."
+      },
+      "audio": {
+        "label": "Audio",
+        "definition": "Acoustic waveform or acoustic representation, including multichannel audio."
+      },
+      "spike_events": {
+        "label": "Spike events & counts",
+        "definition": "Discrete event times, unit labels or time-binned neural event counts."
+      },
+      "motion": {
+        "label": "Positions & trajectories",
+        "definition": "Observed coordinates, skeletons, position/velocity histories or physical trajectories."
+      },
+      "tables": {
+        "label": "Feature & trial tables",
+        "definition": "Per-cell feature vectors, molecular expression profiles, trial covariates, choices/rewards or simulator-state variables."
+      },
+      "files": {
+        "label": "Scientific files & models",
+        "definition": "Container/schema inspection, pipeline execution or executable mechanistic model artifacts are central to the task."
+      },
+      "multimodal": {
+        "label": "Multimodal",
+        "definition": "Two or more of the above information types are jointly required as predictive/inferential inputs, excluding supervision-only targets and auxiliary metadata."
+      }
+    },
+    "operation": {
+      "detect_segment": {
+        "label": "Detection & segmentation",
+        "definition": "Locate events or assign spatial/temporal foreground or instance labels."
+      },
+      "classify_decode": {
+        "label": "Classification & decoding",
+        "definition": "Predict discrete classes, identity, retrieved item, symbols/text or choice probabilities."
+      },
+      "predict": {
+        "label": "Continuous prediction & encoding",
+        "definition": "Predict numerical responses or future trajectories, including neural encoding and forecasting."
+      },
+      "recover": {
+        "label": "Signal & latent-state recovery",
+        "definition": "Reconstruct denoised activity, missing values, source signals, sorted units or latent dynamics."
+      },
+      "register_track": {
+        "label": "Registration & tracking",
+        "definition": "Estimate spatial transformations, correspondences, trajectories or physical source locations."
+      },
+      "infer": {
+        "label": "Statistical & mechanistic inference",
+        "definition": "Estimate model parameters/posteriors, validate mechanistic models or test hypotheses."
+      },
+      "compress": {
+        "label": "Compression",
+        "definition": "Encode/decode data under fidelity and resource constraints."
+      },
+      "control": {
+        "label": "Experimental design & control",
+        "definition": "Choose interventions/actions in experimental-design or closed-loop settings."
+      },
+      "workflow": {
+        "label": "Scientific workflows",
+        "definition": "Load, validate or process scientific artifacts, or answer executable analysis questions."
+      }
+    },
+    "generalization": {
+      "within_source": {
+        "label": "Within-source samples",
+        "definition": "Held-out observations, trials or time blocks from the same biological sources; not a claim of subject transfer."
+      },
+      "new_recordings": {
+        "label": "New sessions / recordings",
+        "definition": "Independent recording sessions or acquisition fields, without asserting new subjects."
+      },
+      "new_subjects": {
+        "label": "New animals / people / donors",
+        "definition": "Explicit separation of biological individuals between fitting and evaluation."
+      },
+      "new_datasets": {
+        "label": "New datasets / sites",
+        "definition": "Explicit transfer across dataset or acquisition-site boundaries."
+      },
+      "new_conditions": {
+        "label": "New conditions / tasks",
+        "definition": "Explicit held-out intervention, task or stimulus regime; ordinary random new stimuli alone do not qualify."
+      },
+      "simulated_cases": {
+        "label": "New simulated cases",
+        "definition": "Independent synthetic realizations or generative parameter settings; no biological transfer implied."
+      },
+      "no_transfer": {
+        "label": "No trained-transfer test",
+        "definition": "Direct per-instance inference, unsupervised fitting or codec/schema correctness; no supervised train-to-test transfer claim."
+      },
+      "unspecified": {
+        "label": "Not yet specified",
+        "definition": "The proposed split is not sufficiently fixed to assign a stronger transfer claim."
+      }
+    }
+  },
+  "rules": [
+    "AND across facets; any listed generalization value matches within that facet.",
+    "One primary operation and one coarse input type per task; multimodal has a sorted combination of >=2 input components.",
+    "Targets, label files, instructions, masks, timestamps, static priors and calibration metadata do not alone make a task multimodal.",
+    "Multiple cameras or MRI contrasts remain one coarse images/video type. Multiple physiological channels remain one signal type.",
+    "Tags describe the data interface processed by generated code, not necessarily raw sensor data or directly tokenized model input.",
+    "Filters select whole tasks, preserving all frozen slices and their existing equal-slice aggregation.",
+    "No trained-transfer test is different from within-source holdout; a solved posterior case or exact codec round trip is not subject generalization.",
+    "Proposed tags are provisional; unknown splits stay not yet specified.",
+    "Classes and thresholds are not evidence of causal differences or exhaustive neuroscience coverage."
+  ],
+  "input_sha256": {
+    "registry/catalog.json": "2b4f7bca21f5fa1f68f812f3b25a9dda4965c4e76f2b471721f2b82097575b05",
+    "analysis/generation-comparison-v2/generation-comparison.json": "e9e1324936e7fbda528218c10b9898fd17e1bdfdbf38faf5ba7b978dbf8e1d26"
+  },
+  "assignments": [
+    {
+      "benchmark_id": "B03",
+      "family_code": "B",
+      "scope": "executed",
+      "input_type": "spike_events",
+      "input_components": [
+        "spike_events"
+      ],
+      "operation": "register_track",
+      "generalization": [
+        "simulated_cases"
+      ],
+      "rationale": "The model receives depth-by-time peak-count rasters, not raw voltage, and estimates rigid probe displacement. Test cases are four simulated recordings. No labeled training rasters are supplied to the zero-shot model.",
+      "evidence": [
+        {
+          "path": "experiments/B03/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://spikeinterface.readthedocs.io/en/stable/modules/benchmark.html",
+        "https://github.com/evarol/dredge",
+        "https://spikeinterface.readthedocs.io/en/latest/api.html",
+        "https://github.com/SpikeInterface/spikeinterface",
+        "https://proceedings.neurips.cc/paper/2021/hash/b950ea26ca12daae142bd74dba4427c8-Abstract.html"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "C06",
+      "family_code": "C",
+      "scope": "executed",
+      "input_type": "physiological_signals",
+      "input_components": [
+        "physiological_signals"
+      ],
+      "operation": "recover",
+      "generalization": [
+        "new_subjects"
+      ],
+      "rationale": "The model receives native-rate fluorescence with valid-frame and timing metadata and predicts expected spikes. Two retained test fish are distinct from the source training fish; labeled training traces are not supplied to the model. Timing and masks are auxiliary, not a second sensory modality.",
+      "evidence": [
+        {
+          "path": "experiments/C06/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611618/",
+        "https://github.com/HelmchenLabSoftware/Cascade/tree/1f9f98bf93b9b554ab68d6304aa365ab7c7ee34f",
+        "https://github.com/HelmchenLabSoftware/Cascade/blob/1f9f98bf93b9b554ab68d6304aa365ab7c7ee34f/cascade2p/utils.py",
+        "https://github.com/HelmchenLabSoftware/Cascade/blob/1f9f98bf93b9b554ab68d6304aa365ab7c7ee34f/LICENSE"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "D02",
+      "family_code": "D",
+      "scope": "executed",
+      "input_type": "physiological_signals",
+      "input_components": [
+        "physiological_signals"
+      ],
+      "operation": "predict",
+      "generalization": [
+        "new_conditions"
+      ],
+      "rationale": "A current trace is supplied and a voltage trace is requested for one Allen cell. The two test negative-current sweeps use held-out stimulus amplitudes. Training calibration is available to the retained reference but omitted from direct inference; this does not test transfer to new cells.",
+      "evidence": [
+        {
+          "path": "experiments/D02/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://brain-map.org/support/documentation/documentation-cell-types-database",
+        "https://alleninstitute.github.io/AllenSDK/cell_types.html",
+        "https://brain-map.org/support/documentation/cell-types-database-api"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "I10",
+      "family_code": "I",
+      "scope": "executed",
+      "input_type": "tables",
+      "input_components": [
+        "tables"
+      ],
+      "operation": "classify_decode",
+      "generalization": [
+        "new_datasets"
+      ],
+      "rationale": "The input is 68 prepared MRIQC numerical features, not MRI voxels. The retained source protocol separates ABIDE training from DS030 test data. Direct inference sees the test features without labeled ABIDE calibration; this label records the source evaluation boundary, not an adaptation performed by the model.",
+      "evidence": [
+        {
+          "path": "experiments/I10/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://doi.org/10.1371/journal.pone.0184661",
+        "https://github.com/nipreps/mriqc/tree/c5767827abba6c1c01f7cc26b5fb1d0cd32a7fe8/mriqc/data/csv"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "J08",
+      "family_code": "J",
+      "scope": "executed",
+      "input_type": "images_video",
+      "input_components": [
+        "images_video"
+      ],
+      "operation": "detect_segment",
+      "generalization": [
+        "new_recordings"
+      ],
+      "rationale": "The model receives two-dimensional fluorescence images and ROI/geometry metadata, and returns object polygons. Two retained acquisition fields are held out from the source training fields; no labeled training images are supplied. Repeated expert annotations are not independent fields.",
+      "evidence": [
+        {
+          "path": "experiments/J08/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13432752/",
+        "https://github.com/pascalschamber/SynAPSeg",
+        "https://zenodo.org/records/18988899",
+        "https://doi.org/10.1371/journal.pcbi.1014571"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "K01",
+      "family_code": "K",
+      "scope": "executed",
+      "input_type": "tables",
+      "input_components": [
+        "tables"
+      ],
+      "operation": "classify_decode",
+      "generalization": [
+        "new_subjects"
+      ],
+      "rationale": "The model receives 11 prepared electrophysiological numerical features and predicts a morphological class; dendrite images are not inputs. The source split separates donors. No source training labels are supplied for direct inference.",
+      "evidence": [
+        {
+          "path": "experiments/K01/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://brain-map.org/our-research/cell-types-taxonomies",
+        "https://brain-map.org/support/documentation/documentation-cell-types-database",
+        "https://brain-map.org/support/documentation/cell-types-database-api",
+        "https://celltypes.brain-map.org/",
+        "https://alleninstitute.org/terms-of-use/"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "K05",
+      "family_code": "K",
+      "scope": "executed",
+      "input_type": "tables",
+      "input_components": [
+        "tables"
+      ],
+      "operation": "predict",
+      "generalization": [
+        "new_subjects"
+      ],
+      "rationale": "The input is 2,000 gene-expression features and the output is continuous cell fractions. Three retained test donors are separated from five source training donors. Neither paired fraction calibration nor a single-cell reference atlas is supplied to the model. Donor/block identifiers are auxiliary.",
+      "evidence": [
+        {
+          "path": "experiments/K05/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://doi.org/10.1186/s13059-025-03552-3",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11978107/",
+        "https://github.com/LieberInstitute/Human_DLPFC_Deconvolution",
+        "https://research.libd.org/DeconvoBuddies/reference/fetch_deconvo_data.html",
+        "https://zenodo.org/records/14969244"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "K06",
+      "family_code": "K",
+      "scope": "executed",
+      "input_type": "tables",
+      "input_components": [
+        "tables"
+      ],
+      "operation": "classify_decode",
+      "generalization": [
+        "new_subjects"
+      ],
+      "rationale": "The input is 87 waveform-only numerical features and the output is PV/SST class. Five held-out test mice are separated from eleven source training mice; training labels are not supplied. Genetic identity and optoresponses are not inputs.",
+      "evidence": [
+        {
+          "path": "experiments/K06/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://cellexplorer.org/publicdata/ground-truth-data/",
+        "https://cellexplorer.org/tutorials/ground-truth-tutorial/",
+        "https://alleninstitute.github.io/openscope_databook/optotagging/",
+        "https://api.github.com/repos/petersenpeter/CellExplorer/contents/%2BgroundTruthData",
+        "https://doi.org/10.1016/j.neuron.2021.09.002",
+        "https://github.com/petersenpeter/CellExplorer",
+        "https://alleninstitute.org/legal/terms-of-use"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "L04",
+      "family_code": "L",
+      "scope": "executed",
+      "input_type": "motion",
+      "input_components": [
+        "motion"
+      ],
+      "operation": "predict",
+      "generalization": [
+        "within_source"
+      ],
+      "rationale": "Position and velocity histories predict 20-ms spike counts for one cell on a chronological within-source holdout. Unlike the other tasks, 64 fixed training examples are supplied in context. Their spike labels are supervised demonstrations, not an extra input modality at prediction time.",
+      "evidence": [
+        {
+          "path": "experiments/L04/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://neurallatents.github.io/",
+        "https://github.com/snel-repo/ComputationThroughDynamicsToolkit",
+        "https://mark-kramer.github.io/Case-Studies-Python/09.html",
+        "https://github.com/Mark-Kramer/Case-Studies-Python"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "M01",
+      "family_code": "M",
+      "scope": "executed",
+      "input_type": "tables",
+      "input_components": [
+        "tables"
+      ],
+      "operation": "classify_decode",
+      "generalization": [
+        "new_subjects"
+      ],
+      "rationale": "Thirteen current/past trial features predict choice probability. Seventeen test mice are held out from 83 source training mice, with overlapping labs; this is not cross-lab transfer. Direct inference receives no labeled source training trials.",
+      "evidence": [
+        {
+          "path": "experiments/M01/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://www.internationalbrainlab.com/data",
+        "https://www.nature.com/articles/s41586-025-09215-4",
+        "https://figshare.com/articles/dataset/11636748",
+        "https://api.figshare.com/v2/articles/11636748",
+        "https://elifesciences.org/articles/63711",
+        "https://github.com/int-brain-lab/paper-behavior/blob/24b094226a84c8609c97cfd36c8387ea7c5d61e0/figure5_GLM_modelfit.py"
+      ],
+      "reviewed_on": "2026-11-01"
+    },
+    {
+      "benchmark_id": "M04",
+      "family_code": "M",
+      "scope": "executed",
+      "input_type": "tables",
+      "input_components": [
+        "tables"
+      ],
+      "operation": "infer",
+      "generalization": [
+        "simulated_cases"
+      ],
+      "rationale": "Synthetic choice/reward trial sequences are supplied to recover Q-learning parameters on held-out generative parameter draws. This is simulated-case inference, not new-animal biological transfer.",
+      "evidence": [
+        {
+          "path": "experiments/M04/run-report.md"
+        }
+      ],
+      "source_urls": [
+        "https://elifesciences.org/articles/49547"
+      ],
+      "reviewed_on": "2026-11-01"
+    }
+  ]
+}

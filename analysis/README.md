@@ -30,3 +30,7 @@ Transport and model generation are confounded: Sol uses the Codex harness;4.1/5 
 ## References and audit
 
 All 11 displayed task-specific reference prediction files were independently rescored against the same retained targets. They are local/archived references, not verified current-best published SOTA. Specialist training and calibration differ; J08 direct inputs also use an explicit8bit image representation. [Reference audit](../results/reference-validation.json), [primary results](../results/primary-report.md), [execution routing](../docs/execution-routing.md), [full-panel feasibility](../docs/feasibility-audit.md).
+
+## Explorer tables
+
+See [all tables and interpretation](explorer-analysis.md), [lag/IQR source rows](generation-lags-v1/), [specialist comparisons](specialist-frontier-v1/) and [trajectory classifications](generation-patterns-v1/). All use only the ten complete direct-inference panels; C06 is displayed outside that macro cohort.

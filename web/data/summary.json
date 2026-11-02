@@ -1,0 +1,68 @@
+{
+  "measured_tasks": 11,
+  "measured_families": 8,
+  "model_attempts": 44,
+  "models": [
+    "gpt-4.1-2025-04-14",
+    "gpt-5-2025-08-07",
+    "gpt-5.6-sol",
+    "gpt-6.1-sol"
+  ],
+  "reference_envelopes": [
+    {
+      "benchmark_id": "B03",
+      "slice_id": "Full retained test",
+      "model": "reference-B03"
+    },
+    {
+      "benchmark_id": "C06",
+      "slice_id": "Full retained test",
+      "model": "reference-C06"
+    },
+    {
+      "benchmark_id": "D02",
+      "slice_id": "Full retained test",
+      "model": "reference-D02"
+    },
+    {
+      "benchmark_id": "I10",
+      "slice_id": "Full retained test",
+      "model": "reference-I10"
+    },
+    {
+      "benchmark_id": "J08",
+      "slice_id": "Full retained test",
+      "model": "reference-J08"
+    },
+    {
+      "benchmark_id": "K01",
+      "slice_id": "Full retained test",
+      "model": "reference-K01"
+    },
+    {
+      "benchmark_id": "K05",
+      "slice_id": "Full retained test",
+      "model": "reference-K05"
+    },
+    {
+      "benchmark_id": "K06",
+      "slice_id": "Full retained test",
+      "model": "reference-K06"
+    },
+    {
+      "benchmark_id": "L04",
+      "slice_id": "Full retained test",
+      "model": "reference-L04"
+    },
+    {
+      "benchmark_id": "M01",
+      "slice_id": "Full retained test",
+      "model": "reference-M01"
+    },
+    {
+      "benchmark_id": "M04",
+      "slice_id": "Full retained test",
+      "model": "reference-M04"
+    }
+  ]
+}

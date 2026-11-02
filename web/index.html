@@ -1,1 +1,51 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="An auditable pilot of direct model inference on neuroscience data."><title>Neural Data · Direct Inference</title><link rel="stylesheet" href="style.css"></head><body><header><a class="brand" href="#/">NEURAL DATA <span>/ DIRECT INFERENCE</span></a><nav aria-label="Main navigation"><a href="#/benchmarks">Benchmarks</a><a href="#/results">Results</a><a href="#/analysis">Analysis</a><a href="#/methods">Methods & audit</a></nav><a class="repo" href="https://github.com/chirag-7/neural-data-direct-inference" target="_blank" rel="noopener">GitHub ↗</a></header><main id="app" aria-live="polite"><p>Loading measured results…</p></main><footer>Direct predictions. Frozen inputs. Traceable evidence. <span>A research pilot · Not a certified specialist leaderboard.</span></footer><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Direct model inference on neuroscience tasks, with auditable native scores and matched-target reference predictions."
+    />
+    <title>Neuroscience Direct Inference · Results explorer</title>
+    <link rel="stylesheet" href="macro-report.css">
+    <link rel="stylesheet" href="style.css?v=11c4f81bd6b6" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#/"
+        ><span class="brand-symbol" aria-hidden="true">∿</span
+        ><span>NEUROSCIENCE INFERENCE</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#/" data-nav="benchmarks">Benchmarks</a
+        ><a href="#/models" data-nav="models">Models</a
+        ><a href="#/analysis" data-nav="analysis">Analysis</a
+        ><a href="#/methods" data-nav="methods">Methods & data</a>
+      </nav>
+      <a
+        class="source-link"
+        href="https://github.com/chirag-7/neural-data-direct-inference"
+        target="_blank"
+        rel="noopener"
+        >GitHub ↗</a
+      >
+    </header>
+    <div class="app-shell">
+      <aside id="sidebar" aria-label="Benchmark categories"></aside>
+      <main id="app">
+        <p class="loading">Loading verified measurements…</p>
+      </main>
+    </div>
+    <footer>
+      <span>Research preview · direct inference v1</span
+      ><span
+        >Direct inference · 10 complete four-model tasks · Current global SOTA
+        unverified</span
+      ><a href="#/excluded">Archived & excluded candidates</a>
+    </footer>
+    <script src="task-facets.js?v=c7abc26387e6"></script>
+    <script src="generation-lags.js?v=ab932a44ed07"></script>
+    <script src="app.js?v=eb3862a6a52a"></script>
+  </body>
+</html>

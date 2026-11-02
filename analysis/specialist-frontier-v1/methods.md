@@ -1,0 +1,9 @@
+# Direct-inference comparisons
+
+Ten complete four-model tasks form the primary cohort; C06 is separately displayed and excluded from these aggregates. Each task counts once. Missing predictions are not zero. Source: results/primary-summary.json; audited comparator predictions: results/reference-validation.json. No old code-generation general-model score is used.
+
+Raw means direction-adjusted native difference with absolute tolerance 1e-9; it is not percentage accuracy or significance. R is that difference divided by the IQR of the same four general-model scores, using inclusive/type-7 interpolation. |R| ≤0.1 or ≤0.5 is within band, including the boundary (1e-12 ratio tolerance). A zero IQR with a nonzero difference is not estimable; no epsilon denominator is invented. These post-hoc bands do not establish equivalence, practical importance, randomness, or a scaling law.
+
+Specialist-only includes SpikeInterface B03 and archived StarDist J08 among the complete tasks; C06 OASIS is outside this cohort. The broader reference table additionally includes conventional trained estimators, domain models and a mathematical audit. None is certified current global SOTA. All reference predictions were rescored on the retained targets, but input, calibration and fitting access can differ. Best general selects the best of four observed test scores per task; it is a post-hoc envelope, not a single deployable model. The specialist is not added to the four-point IQR.
+
+Six pairs share the same ten tasks and are dependent. Category/filter results often have one task. Public tasks, synthetic diagnostics B03/M04, unequal transport/reasoning/repairs and omitted calibration in D02 limit interpretation. L04 is 64-example in-context inference; other tasks are zero-shot. There are no repeated-generation or biological uncertainty intervals. Do not average incompatible native score differences.

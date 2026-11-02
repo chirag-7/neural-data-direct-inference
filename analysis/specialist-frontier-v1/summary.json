@@ -1,0 +1,393 @@
+{
+  "revision": "direct-inference-v1",
+  "tasks": [
+    {
+      "benchmark_id": "B03",
+      "task": "Rigid ephys drift",
+      "family_code": "B",
+      "metric": "recording_mean_motion_rmse_um",
+      "direction": "lower",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 15.798265807018467,
+        "gpt-5-2025-08-07": 12.770538333366602,
+        "gpt-5.6-sol": 10.860646357738913,
+        "gpt-6.1-sol": 2.426070677122055
+      },
+      "best_general_models": [
+        "gpt-6.1-sol"
+      ],
+      "best_general_score": 2.426070677122055,
+      "q1": 8.752002437584698,
+      "q3": 13.527470201779568,
+      "general_panel_iqr": 4.77546776419487,
+      "best_available_reference": {
+        "methods": [
+          "reference-B03"
+        ],
+        "name": "SpikeInterface raster registration",
+        "score": 4.850138078041406,
+        "direction_adjusted_delta": 2.4240674009193506,
+        "raw_native_delta": -2.4240674009193506,
+        "gap_in_general_panel_iqr": 0.5076083685653444,
+        "classes": {
+          "raw": "general_better",
+          "iqr_0.1": "general_better",
+          "iqr_0.5": "general_better"
+        }
+      },
+      "best_specialist": {
+        "methods": [
+          "reference-B03"
+        ],
+        "name": "SpikeInterface raster registration",
+        "score": 4.850138078041406,
+        "direction_adjusted_delta": 2.4240674009193506,
+        "raw_native_delta": -2.4240674009193506,
+        "gap_in_general_panel_iqr": 0.5076083685653444,
+        "classes": {
+          "raw": "general_better",
+          "iqr_0.1": "general_better",
+          "iqr_0.5": "general_better"
+        }
+      }
+    },
+    {
+      "benchmark_id": "D02",
+      "task": "Current \u2192 voltage",
+      "family_code": "D",
+      "metric": "rmse",
+      "direction": "lower",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 11.44394614468848,
+        "gpt-5-2025-08-07": 5.178963083689003,
+        "gpt-5.6-sol": 7.413651131320161,
+        "gpt-6.1-sol": 4.031296204035874
+      },
+      "best_general_models": [
+        "gpt-6.1-sol"
+      ],
+      "best_general_score": 4.031296204035874,
+      "q1": 4.892046363775721,
+      "q3": 8.42122488466224,
+      "general_panel_iqr": 3.5291785208865196,
+      "best_available_reference": {
+        "methods": [
+          "reference-D02"
+        ],
+        "name": "Training-selected passive response",
+        "score": 0.2207856527515162,
+        "direction_adjusted_delta": -3.8105105512843576,
+        "raw_native_delta": 3.8105105512843576,
+        "gap_in_general_panel_iqr": -1.0797160100382703,
+        "classes": {
+          "raw": "specialist_better",
+          "iqr_0.1": "specialist_better",
+          "iqr_0.5": "specialist_better"
+        }
+      },
+      "best_specialist": null
+    },
+    {
+      "benchmark_id": "I10",
+      "task": "MRI scan quality",
+      "family_code": "I",
+      "metric": "balanced_accuracy",
+      "direction": "higher",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 0.5150877192982456,
+        "gpt-5-2025-08-07": 0.6235087719298246,
+        "gpt-5.6-sol": 0.6308771929824561,
+        "gpt-6.1-sol": 0.6110526315789474
+      },
+      "best_general_models": [
+        "gpt-5.6-sol"
+      ],
+      "best_general_score": 0.6308771929824561,
+      "q1": 0.587061403508772,
+      "q3": 0.6253508771929824,
+      "general_panel_iqr": 0.03828947368421043,
+      "best_available_reference": {
+        "methods": [
+          "reference-I10"
+        ],
+        "name": "Trained random forest",
+        "score": 0.6340350877192983,
+        "direction_adjusted_delta": -0.0031578947368421373,
+        "raw_native_delta": -0.0031578947368421373,
+        "gap_in_general_panel_iqr": -0.08247422680412476,
+        "classes": {
+          "raw": "specialist_better",
+          "iqr_0.1": "within_band",
+          "iqr_0.5": "within_band"
+        }
+      },
+      "best_specialist": null
+    },
+    {
+      "benchmark_id": "J08",
+      "task": "Synaptic puncta segmentation",
+      "family_code": "J",
+      "metric": "equal_image_rater_object_f1_iou_0.5",
+      "direction": "higher",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 0.0,
+        "gpt-5-2025-08-07": 0.0,
+        "gpt-5.6-sol": 0.05277766387649796,
+        "gpt-6.1-sol": 0.11458460113209715
+      },
+      "best_general_models": [
+        "gpt-6.1-sol"
+      ],
+      "best_general_score": 0.11458460113209715,
+      "q1": 0.0,
+      "q3": 0.06822939819039775,
+      "general_panel_iqr": 0.06822939819039775,
+      "best_available_reference": {
+        "methods": [
+          "reference-J08"
+        ],
+        "name": "SynAPSeg StarDist archived masks",
+        "score": 0.8625343802858836,
+        "direction_adjusted_delta": -0.7479497791537865,
+        "raw_native_delta": -0.7479497791537865,
+        "gap_in_general_panel_iqr": -10.962280175278595,
+        "classes": {
+          "raw": "specialist_better",
+          "iqr_0.1": "specialist_better",
+          "iqr_0.5": "specialist_better"
+        }
+      },
+      "best_specialist": {
+        "methods": [
+          "reference-J08"
+        ],
+        "name": "SynAPSeg StarDist archived masks",
+        "score": 0.8625343802858836,
+        "direction_adjusted_delta": -0.7479497791537865,
+        "raw_native_delta": -0.7479497791537865,
+        "gap_in_general_panel_iqr": -10.962280175278595,
+        "classes": {
+          "raw": "specialist_better",
+          "iqr_0.1": "specialist_better",
+          "iqr_0.5": "specialist_better"
+        }
+      }
+    },
+    {
+      "benchmark_id": "K01",
+      "task": "Dendritic morphology class",
+      "family_code": "K",
+      "metric": "macro_f1",
+      "direction": "higher",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 0.548860348737196,
+        "gpt-5-2025-08-07": 0.7753325621746674,
+        "gpt-5.6-sol": 0.7492339741566432,
+        "gpt-6.1-sol": 0.8048145991069695
+      },
+      "best_general_models": [
+        "gpt-6.1-sol"
+      ],
+      "best_general_score": 0.8048145991069695,
+      "q1": 0.6991405678017814,
+      "q3": 0.782703071407743,
+      "general_panel_iqr": 0.08356250360596162,
+      "best_available_reference": {
+        "methods": [
+          "reference-K01"
+        ],
+        "name": "Trained morphology classifier",
+        "score": 0.9299751005554491,
+        "direction_adjusted_delta": -0.12516050144847957,
+        "raw_native_delta": -0.12516050144847957,
+        "gap_in_general_panel_iqr": -1.4978069833650867,
+        "classes": {
+          "raw": "specialist_better",
+          "iqr_0.1": "specialist_better",
+          "iqr_0.5": "specialist_better"
+        }
+      },
+      "best_specialist": null
+    },
+    {
+      "benchmark_id": "K05",
+      "task": "Cellular fraction estimation",
+      "family_code": "K",
+      "metric": "donor_block_macro_rmse",
+      "direction": "lower",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 0.07923892098401052,
+        "gpt-5-2025-08-07": 0.056901052834444556,
+        "gpt-5.6-sol": 0.07276827715795482,
+        "gpt-6.1-sol": 0.06978553559228849
+      },
+      "best_general_models": [
+        "gpt-5-2025-08-07"
+      ],
+      "best_general_score": 0.056901052834444556,
+      "q1": 0.06656441490282751,
+      "q3": 0.07438593811446875,
+      "general_panel_iqr": 0.007821523211641243,
+      "best_available_reference": {
+        "methods": [
+          "reference-K05"
+        ],
+        "name": "Donor-aware ridge regression",
+        "score": 0.05759104442612498,
+        "direction_adjusted_delta": 0.0006899915916804208,
+        "raw_native_delta": -0.0006899915916804208,
+        "gap_in_general_panel_iqr": 0.08821703560931263,
+        "classes": {
+          "raw": "general_better",
+          "iqr_0.1": "within_band",
+          "iqr_0.5": "within_band"
+        }
+      },
+      "best_specialist": null
+    },
+    {
+      "benchmark_id": "K06",
+      "task": "Optotagged PV / SST class",
+      "family_code": "K",
+      "metric": "class_balanced_mouse_accuracy",
+      "direction": "higher",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 0.8006944444444444,
+        "gpt-5-2025-08-07": 0.837202380952381,
+        "gpt-5.6-sol": 0.8423611111111111,
+        "gpt-6.1-sol": 0.8705357142857143
+      },
+      "best_general_models": [
+        "gpt-6.1-sol"
+      ],
+      "best_general_score": 0.8705357142857143,
+      "q1": 0.8280753968253968,
+      "q3": 0.849404761904762,
+      "general_panel_iqr": 0.021329365079365226,
+      "best_available_reference": {
+        "methods": [
+          "reference-K06"
+        ],
+        "name": "Training-selected SVM / ExtraTrees",
+        "score": 0.8381944444444444,
+        "direction_adjusted_delta": 0.03234126984126995,
+        "raw_native_delta": 0.03234126984126995,
+        "gap_in_general_panel_iqr": 1.5162790697674364,
+        "classes": {
+          "raw": "general_better",
+          "iqr_0.1": "general_better",
+          "iqr_0.5": "general_better"
+        }
+      },
+      "best_specialist": null
+    },
+    {
+      "benchmark_id": "L04",
+      "task": "Place-cell spike counts",
+      "family_code": "L",
+      "metric": "bits_per_spike_train_mean",
+      "direction": "higher",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": -30.101197246896238,
+        "gpt-5-2025-08-07": -0.3787069088762826,
+        "gpt-5.6-sol": 2.6918538723625716,
+        "gpt-6.1-sol": 3.01077522859718
+      },
+      "best_general_models": [
+        "gpt-6.1-sol"
+      ],
+      "best_general_score": 3.01077522859718,
+      "q1": -7.809329493381272,
+      "q3": 2.7715842114212235,
+      "general_panel_iqr": 10.580913704802494,
+      "best_available_reference": {
+        "methods": [
+          "reference-L04"
+        ],
+        "name": "Task-specific Poisson GLM",
+        "score": 3.273675852044798,
+        "direction_adjusted_delta": -0.2629006234476181,
+        "raw_native_delta": -0.2629006234476181,
+        "gap_in_general_panel_iqr": -0.024846684396291036,
+        "classes": {
+          "raw": "specialist_better",
+          "iqr_0.1": "within_band",
+          "iqr_0.5": "within_band"
+        }
+      },
+      "best_specialist": null
+    },
+    {
+      "benchmark_id": "M01",
+      "task": "Mouse choice probability",
+      "family_code": "M",
+      "metric": "mouse_equal_binary_log_loss",
+      "direction": "lower",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 0.6118205661953511,
+        "gpt-5-2025-08-07": 1.376978037139105,
+        "gpt-5.6-sol": 1.1679082999700556,
+        "gpt-6.1-sol": 0.5043277631808548
+      },
+      "best_general_models": [
+        "gpt-6.1-sol"
+      ],
+      "best_general_score": 0.5043277631808548,
+      "q1": 0.584947365441727,
+      "q3": 1.2201757342623178,
+      "general_panel_iqr": 0.6352283688205909,
+      "best_available_reference": {
+        "methods": [
+          "reference-M01"
+        ],
+        "name": "Task-specific behavioral GLM",
+        "score": 0.4638769921606447,
+        "direction_adjusted_delta": -0.04045077102021011,
+        "raw_native_delta": 0.04045077102021011,
+        "gap_in_general_panel_iqr": -0.06367910031366171,
+        "classes": {
+          "raw": "specialist_better",
+          "iqr_0.1": "within_band",
+          "iqr_0.5": "within_band"
+        }
+      },
+      "best_specialist": null
+    },
+    {
+      "benchmark_id": "M04",
+      "task": "Q-learning parameter recovery",
+      "family_code": "M",
+      "metric": "range_normalized_mae",
+      "direction": "lower",
+      "general_scores": {
+        "gpt-4.1-2025-04-14": 0.24184119518527195,
+        "gpt-5-2025-08-07": 0.26775919901178896,
+        "gpt-5.6-sol": 0.2308041466669649,
+        "gpt-6.1-sol": 0.19138292777045207
+      },
+      "best_general_models": [
+        "gpt-6.1-sol"
+      ],
+      "best_general_score": 0.19138292777045207,
+      "q1": 0.22094884194283668,
+      "q3": 0.24832069614190122,
+      "general_panel_iqr": 0.027371854199064544,
+      "best_available_reference": {
+        "methods": [
+          "reference-M04"
+        ],
+        "name": "Exact-likelihood posterior median",
+        "score": 0.05822286923267736,
+        "direction_adjusted_delta": -0.1331600585377747,
+        "raw_native_delta": 0.1331600585377747,
+        "gap_in_general_panel_iqr": -4.86485342093944,
+        "classes": {
+          "raw": "specialist_better",
+          "iqr_0.1": "specialist_better",
+          "iqr_0.5": "specialist_better"
+        }
+      },
+      "best_specialist": null
+    }
+  ]
+}
