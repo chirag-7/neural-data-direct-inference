@@ -1,15 +1,28 @@
 {
   "project_id": "appgprj_6ae7fa3d7dc0819187c41b6878a79e13",
-  "site_source_commit": "f7c006ab0c72abe314cc830c83c4b91f7951fd86",
-  "deployment_id": "appgdep_6ae802a35e4c81918b48b9fd9321b096",
-  "version_id": "appgprj_6ae7fa3d7dc0819187c41b6878a79e13~appgver_4bdafcada7348191bb2fc582e080483a",
+  "site_source_commit": "683930881c3095a015cccb68679a57ce03431538",
+  "deployment_id": "appgdep_6ae80787a20c81919d4fabc4c3689da5",
+  "version_id": "appgprj_6ae7fa3d7dc0819187c41b6878a79e13~appgver_66d7001ca5088191926490a0bd57574a",
   "url": "https://neural-data-direct-inference.almondkoala21.chatgpt.site",
   "status": "succeeded",
   "audience": "owner-private",
   "asset_sha256": {
-    "index.html": "3d417e31a819daece7224397de8c91d4b66a414b94e316d8c878e6e99eabf5db",
+    "app.js": "4ad638395db01c96d886ccebcf8c32f4a70097cc0dfaf785e0848d5224e114f7",
+    "data/catalog.json": "3f0b8ca796ae6d3852d01451ad52ba2c95171e425dbf9fa3bb434d5f4bac607d",
+    "data/comparison-measurements.jsonl": "4cbfdb0c8cf52e3e7a108563391c6eae080318a3d9273b2f480c6012ef92969a",
+    "data/direct-inference.json": "2e6a4313d65b999b96196dff81176250c7e4302682c46a87894d5dd0892091e1",
+    "data/generation-lags.json": "5a78473141443195474fe8de805d6c0f5c6b08a4db133124d4ad95addf45a851",
+    "data/generation-patterns.json": "b52e7d447160e3f5446a96db16a6f8e90c8a1fefbaf53bed7ff6efda7ee8d97d",
+    "data/measurements.csv": "9a3ba514a7299f6dabae05028e0fd0476d7f30946a2bc732190e62c771e3d7bd",
+    "data/measurements.jsonl": "4cbfdb0c8cf52e3e7a108563391c6eae080318a3d9273b2f480c6012ef92969a",
+    "data/specialist-frontier.json": "a14419ffb894cf635e75e3fcbb5eca56aa2befc12a79997fd0e27246db7ac4f1",
+    "data/summary.json": "aa5b5b7fec15646a199711c3f5c779ca793be2d0fdfab3f77732785d59c81628",
+    "data/task-facets.json": "73dd45ac326d31793d415247a08f65a39770654090228b3bca6773ac49115d9e",
     "data.json": "394433ddda63f992760b97d906b9f06b278c62b4a323591c0a84bd26894423da",
-    "style.css": "01a971f8c507eb9e802461828a6fc37d37bb52b6bd47cf0aa2453f9b24a98334",
-    "app.js": "4ae94e18929edc321540b79f142e6432419fb55fc331f448ac91064524cd9ec3"
+    "generation-lags.js": "fd1730d3b21baca508f056a2789c2855507d306337bc34d7475d4420870cf768",
+    "index.html": "fd0779228d4817874471e9a9a9e179dcbcc7392ebe4391e9682c0cc0e84079cf",
+    "macro-report.css": "376479e6055bb7f0de8b34ac05287a57d670208204ca3e452a9b6dc349d65588",
+    "style.css": "11c4f81bd6b6df34e325fe3603ea400d378c398dfc4f7dd9d27f3cbb8a6b75d0",
+    "task-facets.js": "f4ce18aeaba328d9966732a556dc7d738e99807999e9dd731419491a6336ed7a"
   }
 }
