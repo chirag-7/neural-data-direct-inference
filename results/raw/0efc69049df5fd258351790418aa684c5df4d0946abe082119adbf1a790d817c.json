@@ -1,0 +1,130 @@
+{
+  "id": "resp_0bc1f0e14bf10ca7016ae7efc1452c87d295dc24ecba2eabe7",
+  "object": "response",
+  "created_at": 1793585089,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793585090,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 2048,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_0bc1f0e14bf10ca7016ae7efc1ec5087d2a5e8a3fa3c11d6f4",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":72,\"value\":0},{\"id\":73,\"value\":0},{\"id\":74,\"value\":0},{\"id\":75,\"value\":0},{\"id\":76,\"value\":0},{\"id\":77,\"value\":0},{\"id\":78,\"value\":0},{\"id\":79,\"value\":0},{\"id\":80,\"value\":0},{\"id\":81,\"value\":0},{\"id\":82,\"value\":0},{\"id\":83,\"value\":0},{\"id\":84,\"value\":0},{\"id\":85,\"value\":0},{\"id\":86,\"value\":0},{\"id\":87,\"value\":0},{\"id\":88,\"value\":0},{\"id\":89,\"value\":0},{\"id\":90,\"value\":0},{\"id\":91,\"value\":0},{\"id\":92,\"value\":0},{\"id\":93,\"value\":0},{\"id\":94,\"value\":0},{\"id\":95,\"value\":0}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "integer",
+                  "enum": [
+                    0,
+                    1
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 24,
+            "maxItems": 24
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 13184,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 199,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 13383
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,15 @@
+{
+  "K06": {
+    "independent_scorer_matches_original": true,
+    "difference": 0.0,
+    "only_fixture_predictions_used": true
+  },
+  "M01": {
+    "independent_scorer_matches_original": true,
+    "difference": 0.0,
+    "only_fixture_predictions_used": true
+  },
+  "parser": {
+    "missing_duplicate_and_invalid_class_rejected": true
+  }
+}

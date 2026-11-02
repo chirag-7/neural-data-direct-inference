@@ -1,0 +1,130 @@
+{
+  "id": "resp_0aa9138cbad22816016ae7ef62b68087d2aaf59264261473b6",
+  "object": "response",
+  "created_at": 1793584994,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793584996,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 2048,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_0aa9138cbad22816016ae7ef63181087d29c16e43d6d4e2d04",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":336,\"value\":1},{\"id\":337,\"value\":0},{\"id\":338,\"value\":0},{\"id\":339,\"value\":1},{\"id\":340,\"value\":1},{\"id\":341,\"value\":1},{\"id\":342,\"value\":1},{\"id\":343,\"value\":1},{\"id\":344,\"value\":0},{\"id\":345,\"value\":1},{\"id\":346,\"value\":1},{\"id\":347,\"value\":0},{\"id\":348,\"value\":1},{\"id\":349,\"value\":1},{\"id\":350,\"value\":1},{\"id\":351,\"value\":1},{\"id\":352,\"value\":0},{\"id\":353,\"value\":0},{\"id\":354,\"value\":1},{\"id\":355,\"value\":1},{\"id\":356,\"value\":0},{\"id\":357,\"value\":0},{\"id\":358,\"value\":1},{\"id\":359,\"value\":1},{\"id\":360,\"value\":0},{\"id\":361,\"value\":1},{\"id\":362,\"value\":1},{\"id\":363,\"value\":0},{\"id\":364,\"value\":1},{\"id\":365,\"value\":0},{\"id\":366,\"value\":1},{\"id\":367,\"value\":1},{\"id\":368,\"value\":1},{\"id\":369,\"value\":1},{\"id\":370,\"value\":1},{\"id\":371,\"value\":1},{\"id\":372,\"value\":0},{\"id\":373,\"value\":1},{\"id\":374,\"value\":0},{\"id\":375,\"value\":0},{\"id\":376,\"value\":1},{\"id\":377,\"value\":0},{\"id\":378,\"value\":1},{\"id\":379,\"value\":1},{\"id\":380,\"value\":0},{\"id\":381,\"value\":1},{\"id\":382,\"value\":1},{\"id\":383,\"value\":1}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "integer",
+                  "enum": [
+                    0,
+                    1
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 48,
+            "maxItems": 48
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4386,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 391,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4777
+  },
+  "user": null,
+  "metadata": {}
+}

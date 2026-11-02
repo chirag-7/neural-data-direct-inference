@@ -5,9 +5,10 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--bridge',required=True);ap.add_argument('--tasks',nargs='+');ap.add_argument('--regime',default='zero_shot')
- ap.add_argument('--limit',type=int);ap.add_argument('--workers',type=int,default=4);args=ap.parse_args()
+ ap.add_argument('--models',nargs='+',default=['gpt-4.1-2025-04-14','gpt-5-2025-08-07'],choices=['gpt-4.1-2025-04-14','gpt-5-2025-08-07']);ap.add_argument('--limit',type=int);ap.add_argument('--workers',type=int,default=4);args=ap.parse_args()
+ ceiling=json.loads((ROOT/'registry/execution-routing.json').read_text())['api_ceiling_total_usd']
  seal=json.loads((ROOT/'registry/request-seal.json').read_text());rank={m:i for i,m in enumerate(seal['models'])}
- requests=[(sha,r) for sha,r in seal['requests'].items() if (not args.tasks or r['benchmark_id'] in args.tasks) and r['regime']==args.regime]
+ requests=[(sha,r) for sha,r in seal['requests'].items() if (not args.tasks or r['benchmark_id'] in args.tasks) and r['regime']==args.regime and r['model'] in args.models]
  requests.sort(key=lambda x:(args.tasks.index(x[1]['benchmark_id']) if args.tasks else x[1]['benchmark_id'],x[1]['start'],rank[x[1]['model']]))
  requests=[(s,r) for s,r in requests if not (ROOT/f'results/attempts/{s}.json').exists()]
  if args.limit:requests=requests[:args.limit]
@@ -21,13 +22,21 @@ def main():
   if old.get('usage'):
    u=old['usage'];budget['usd']+=(1.25*u['input_tokens']*ir+u['output_tokens']*orr)/1e6
   elif old['status'] not in ('budget_deferred',):budget['usd']+=old.get('conservative_reservation_usd',0)
+ # Deleted Sol prediction files must not erase their already-incurred API spending.
+ ledger=ROOT/'results/api-usage.json'
+ if ledger.exists():
+  ledger_upper=0.0
+  for old in json.loads(ledger.read_text())['requests']:
+   ir,orr=rates[old['model']];u=old.get('usage',{})
+   ledger_upper+=(1.25*u['input_tokens']*ir+u['output_tokens']*orr)/1e6 if 'input_tokens' in u and 'output_tokens' in u else old.get('reserved_max_usd',0)
+  budget['usd']=max(budget['usd'],ledger_upper)
  def send(item):
   digest,entry=item;request_file=ROOT/entry['request_path'];obj=json.loads(request_file.read_text())
   assert hashlib.sha256(json.dumps(obj,sort_keys=True,separators=(',',':')).encode()).hexdigest()==digest
   ir,orr=rates[entry['model']]
   reservation=(1.25*len(json.dumps(obj).encode())*ir+obj['max_output_tokens']*orr)/1e6
   with lock:
-   if budget['usd']+reservation>5.0:
+   if budget['usd']+reservation>ceiling:
     print(json.dumps(dict(benchmark_id=entry['benchmark_id'],model=entry['model'],status='budget_deferred')),flush=True)
     return dict(status='budget_deferred')
    budget['usd']+=reservation

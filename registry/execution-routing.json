@@ -1,0 +1,13 @@
+{
+  "effective_date": "2026-11-01",
+  "primary_routes": {
+    "gpt-4.1-2025-04-14": "openai_api",
+    "gpt-5-2025-08-07": "openai_api",
+    "gpt-5.6-sol": "codex_harness_chatgpt",
+    "gpt-6.1-sol": "codex_harness_chatgpt"
+  },
+  "api_ceiling_total_usd": 20,
+  "historical_api_attempts": "Sol API prediction outputs, scores and attempt files removed from current study tree at user request. Usage-only receipts retained for spending accounting; previous Git snapshots are not rewritten.",
+  "harness_comparison_caveat": "Codex system/developer instructions and interface differ from raw Responses API. Same frozen user data and prediction schema; no tools or external fitting allowed. Transport is an experimental factor.",
+  "sol_api_forbidden": true
+}

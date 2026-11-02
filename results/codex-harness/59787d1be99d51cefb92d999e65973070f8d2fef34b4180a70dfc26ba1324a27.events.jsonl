@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19a11-9793-70c3-bed2-d2bf0fb97d56"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"predictions\":[{\"id\":96,\"value\":0},{\"id\":97,\"value\":0},{\"id\":98,\"value\":0},{\"id\":99,\"value\":0},{\"id\":100,\"value\":0},{\"id\":101,\"value\":0},{\"id\":102,\"value\":0},{\"id\":103,\"value\":1},{\"id\":104,\"value\":1},{\"id\":105,\"value\":1},{\"id\":106,\"value\":0},{\"id\":107,\"value\":0},{\"id\":108,\"value\":0},{\"id\":109,\"value\":0},{\"id\":110,\"value\":0},{\"id\":111,\"value\":0},{\"id\":112,\"value\":1},{\"id\":113,\"value\":0},{\"id\":114,\"value\":0},{\"id\":115,\"value\":1},{\"id\":116,\"value\":0},{\"id\":117,\"value\":1},{\"id\":118,\"value\":0},{\"id\":119,\"value\":0}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":22971,"cached_input_tokens":8064,"cache_write_input_tokens":0,"output_tokens":695,"reasoning_output_tokens":485}}

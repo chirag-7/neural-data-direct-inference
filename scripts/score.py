@@ -58,10 +58,10 @@ def main():
   # Scorer-only target access; never returned to the model API.
   with np.load(data,allow_pickle=False) as z:
    truth=z['test_y'];groups=z['test_groups'] if 'test_groups' in z.files else np.arange(len(truth))
-  for model in seal['models']:
+  for model in ('gpt-4.1-2025-04-14','gpt-5-2025-08-07'):
    panel=items.get((bid,model,task['regime']),{});ids=sorted(panel)
    full=ids==list(range(len(truth)))
-   row=dict(benchmark_id=bid,model=model,regime=task['regime'],n_expected=len(truth),n_valid_predictions=len(ids),
+   row=dict(benchmark_id=bid,model=model,transport='openai_api',regime=task['regime'],n_expected=len(truth),n_valid_predictions=len(ids),
     coverage=len(ids)/len(truth),complete=full,status='complete' if full else ('partial' if ids else 'not_measured'),
     metric=task['metric'],direction='lower' if bid=='M01' else 'higher',score=None,
     official_benchmark=False,specialist_current_best_verified=False)
@@ -77,8 +77,8 @@ def main():
   invalid_response_batches=sum(a['status']=='response_saved' and not a['output_valid'] for a in attempts),
   summaries=summaries,attempts=attempts)
  (ROOT/'results/summary.json').write_text(json.dumps(result,indent=2)+'\n')
- lines=['# Direct-inference results','',result['paradigm']+'.','',
-  'Scores appear only for complete retained test sets. These are explicitly custom-protocol fallbacks. Partial requests are not completed benchmarks. No original code-generation result is used.', '',
+ lines=['# Historical API direct-inference results','',result['paradigm']+'.','',
+  'These are API observations for GPT-4.1 and GPT-5 only; Sol models are scored separately from harness outputs. Scores appear only for complete retained test sets. These are explicitly custom-protocol fallbacks. Partial requests are not completed benchmarks. No original code-generation result is used.', '',
   '| Task | Model | Condition | Valid predictions / test cases | Status | Native score |','|---|---|---|---|---|---|']
  for r in summaries:lines.append(f"| {r['benchmark_id']} | {r['model']} | {r['regime']} | {r['n_valid_predictions']} / {r['n_expected']} | {r['status']} | {r['score'] if r['score'] is not None else '—'} |")
  lines+=['','Specialist current-best matching is unresolved for these fallback contracts; no claim of superiority to field SOTA is made.','']
