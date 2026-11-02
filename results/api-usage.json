@@ -1,0 +1,103 @@
+{
+  "new_study_ceiling_usd": 5.0,
+  "spent_or_reserved_usd": 0.17628275000000004,
+  "credential_persisted": false,
+  "requests": [
+    {
+      "request_sha256": "9f6842fe152207a5f602eaa862e24a0ddcb18f6156042af9fd5bab416883f523",
+      "model": "gpt-5.6-sol",
+      "task": "K01",
+      "regime": "zero_shot",
+      "reserved_max_usd": 0.207016,
+      "status": "completed",
+      "time_unix": 1793584739.171083,
+      "usage": {
+        "input_tokens": 4359,
+        "input_tokens_details": {
+          "cache_write_tokens": 4356,
+          "cached_tokens": 0
+        },
+        "output_tokens": 3114,
+        "output_tokens_details": {
+          "reasoning_tokens": 2714
+        },
+        "total_tokens": 7473
+      },
+      "returned_model": "gpt-5.6-sol",
+      "request_id": "req_fdf2a0a791af4d07a275cd94eaff66d1",
+      "uncached_rate_cost_usd": 0.079716
+    },
+    {
+      "request_sha256": "f8fd3f19bef1a5473355a6aa99b032d8507481f710e443c6d19f121b0568b364",
+      "model": "gpt-6.1-sol",
+      "task": "K01",
+      "regime": "zero_shot",
+      "reserved_max_usd": 0.103508,
+      "status": "completed",
+      "time_unix": 1793584739.1751611,
+      "usage": {
+        "input_tokens": 4359,
+        "input_tokens_details": {
+          "cache_write_tokens": 4356,
+          "cached_tokens": 0
+        },
+        "output_tokens": 594,
+        "output_tokens_details": {
+          "reasoning_tokens": 194
+        },
+        "total_tokens": 4953
+      },
+      "returned_model": "gpt-6.1-sol",
+      "request_id": "req_8928551abb32402eb160e44c5344c922",
+      "uncached_rate_cost_usd": 0.014658
+    },
+    {
+      "request_sha256": "7d1caf8981dc43fa628b121056efafc338733c58f95bb3f0f9f7ef37f523555b",
+      "model": "gpt-5-2025-08-07",
+      "task": "K01",
+      "regime": "zero_shot",
+      "reserved_max_usd": 0.09541875,
+      "status": "completed",
+      "time_unix": 1793584739.1753569,
+      "usage": {
+        "input_tokens": 4359,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 6461,
+        "output_tokens_details": {
+          "reasoning_tokens": 6016
+        },
+        "total_tokens": 10820
+      },
+      "returned_model": "gpt-5-2025-08-07",
+      "request_id": "req_fff5baa15ddb4c749ebf8f181f033bbe",
+      "uncached_rate_cost_usd": 0.07005875
+    },
+    {
+      "request_sha256": "b983284eb9916ffdcc6d9666208aeae0aeb6d0cff1266741f172064a7927fa7b",
+      "model": "gpt-4.1-2025-04-14",
+      "task": "K01",
+      "regime": "zero_shot",
+      "reserved_max_usd": 0.037916,
+      "status": "completed",
+      "time_unix": 1793584739.175534,
+      "usage": {
+        "input_tokens": 4361,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 391,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4752
+      },
+      "returned_model": "gpt-4.1-2025-04-14",
+      "request_id": "req_c9ec1048ee014cd8933b428d92ee6bbe",
+      "uncached_rate_cost_usd": 0.01185
+    }
+  ]
+}
