@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "C06",
+  "model": "gpt-5-2025-08-07",
+  "regime": "zero_shot",
+  "start": 10,
+  "stop": 11,
+  "request_path": "work/requests/c06e9b3bbee0497e0d400bbd434ab0f1ad52efcb7be12b933f4ba323e3085363.json",
+  "prompt_path": "experiments/C06/prompts/zero_shot-00010.txt",
+  "prompt_sha256": "3385691e011b5faec940a1a1b4a3b4d72406ee912d2709f3bc6be8fbbba5165d",
+  "source_data_sha256": "91154dac913910f2a0dd4c60985fc886eecb426970b3589a24e919836a4f543b",
+  "n_predictions": 1,
+  "output_kind": "tensor",
+  "prediction_shape": [
+    900
+  ],
+  "bounds": null,
+  "nonnegative": true,
+  "reasoning_effort": "low",
+  "request_sha256": "c06e9b3bbee0497e0d400bbd434ab0f1ad52efcb7be12b933f4ba323e3085363",
+  "status": "http_error",
+  "started_unix": 1793587372.9886138,
+  "conservative_reservation_usd": 0.14602,
+  "http_status": 429,
+  "error": "{\"error\": \"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\\\",\\n    \\\"type\\\": \\\"insufficient_quota\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"credit_balance_exhausted\\\"\\n  }\\n}\"}",
+  "elapsed_seconds": 0.5600540637969971
+}

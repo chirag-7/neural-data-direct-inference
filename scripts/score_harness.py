@@ -8,6 +8,8 @@ def main():
     panels, attempts = {}, []
     for path in sorted((ROOT/'results/codex-harness').glob('*.attempt.json')):
         a = json.loads(path.read_text())
+        if a.get('output_kind') in ('tensor','polygons'):
+            continue
         a['output_valid'] = False
         if a['status'] == 'response_saved':
             try:
@@ -27,6 +29,8 @@ def main():
         attempts.append(a)
     rows = []
     for task in seal['task_records']:
+        if task.get('output_kind') in ('tensor','polygons'):
+            continue
         bid = task['benchmark_id']
         data = OLD/f'data/cache/{bid}/data.npz'
         assert hashlib.sha256(data.read_bytes()).hexdigest() == task['source_data_sha256']
@@ -37,7 +41,7 @@ def main():
             panel = panels.get((bid, model, task['regime']), {})
             ids = sorted(panel)
             complete = ids == list(range(len(y)))
-            rows.append(dict(benchmark_id=bid, model=model, transport='codex_harness_chatgpt',
+            rows.append(dict(benchmark_id=bid, model=model, transport='codex_harness_chatgpt', regime=task['regime'], reasoning_effort='medium',
                 n_expected=len(y), n_valid_predictions=len(ids), complete=complete,
                 metric=task['metric'], direction='lower' if bid=='M01' else 'higher',
                 score=metric(bid,np.array([panel[i] for i in ids]),y,groups) if complete else None))

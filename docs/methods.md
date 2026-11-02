@@ -19,3 +19,11 @@ After raw responses are saved, the scorer validates exact expected row IDs, fini
 The older code-generation study remains intact. No model score, specialist prediction, fitted model or manually repaired generated program from it is a direct-inference measurement.
 
 Sources: [Structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs), [GPT-4.1](https://developers.openai.com/api/docs/models/gpt-4.1), [GPT-5](https://developers.openai.com/api/docs/models/gpt-5), [GPT-5.6 Sol](https://developers.openai.com/api/docs/models/gpt-5.6-sol), [GPT-6.1 Sol](https://developers.openai.com/api/docs/models/gpt-6.1-sol). Dataset-specific provenance and prior source protocols are linked from [the registry](../registry/tasks.json).
+
+## Pilot stopping point
+
+The user reduced scope to approximately10–15 benchmarks. The retained pilot admits11 tasks across8 broad categories, with10 complete four-model panels and one calcium task with an incomplete GPT-5 and GPT-6.1 Sol panels. Nineteen inherited candidates are deferred from this pilot; their resource/interface dispositions are not empirical model failures. No additional tasks are added at this stopping point.
+
+## Reasoning and output recoveries
+
+The final per-panel configuration is in primary-summary.json and each task run-report. L04 uses64 uniformly spaced training examples as a separate in-context condition, with low reasoning for all reasoning models. GPT-5 M01 uses valid low-effort64-case batches and low-effort16-case repairs without overlap. D02 GPT-5 is fully rerun at low effort. C06 timed-out Sol cases receive recorded low-effort recovery. This is an adaptive completion workflow, not an equal-reasoning controlled model comparison. Failed and superseded valid outputs remain distinguishable in audit records.

@@ -1,0 +1,5 @@
+# M04: direct numeric inference
+
+Recover parameters of a two-action Q-learning agent from 240 ordered binary choices and rewards. Q starts at [0.5,0.5]. Before each choice P(action=1)=sigmoid(beta*(Q[1]-Q[0])); after observing action a and reward r, update only Q[a] += alpha*(r-Q[a]). No lapse, decay or perseveration. Recover alpha in [0.01,0.99] and beta in [0.1,10]. Return value [alpha,beta], actual two numbers. Reward probabilities reverse, but rewards are observed and can be conditioned upon. Parameters generating these observations are withheld.
+
+[Input manifest](input-manifest.json) freezes every retained test case, input hash, output layout and units. No test targets are read during preparation. No training examples, fitted models, or model-written code are used. Primary score: `range_normalized_mae` (lower is better). This is an explicitly custom protocol, not a published official benchmark replication. Zero-shot missing calibration must be considered when interpreting comparisons with trained specialists.

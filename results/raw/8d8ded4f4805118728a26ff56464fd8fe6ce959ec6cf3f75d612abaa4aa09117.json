@@ -1,0 +1,131 @@
+{
+  "id": "resp_03e3552079f064bd016ae7f691116887d2aa920fc03726e9b0",
+  "object": "response",
+  "created_at": 1793586833,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793586836,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 8192,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_03e3552079f064bd016ae7f692ea8887d28d2eb9b12d6b4f40",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":2,\"value\":[-11.583,-11.341,-11.259,-10.912,-10.591,-10.482,-10.01,-10.103,-9.582,-9.422,-9.187,-8.752,-8.655,-8.633,-8.421,-8.074,-7.932,-7.594,-7.495,-7.232,-7.326,-7.606,-7.653,-7.158,-6.876,-6.58,-6.559,-6.111,-5.944,-5.709,-5.267,-4.955,-4.511,-4.05,-3.613,-3.219,-2.799,-2.401,-2.129,-1.794,-1.481,-1.107,-0.656,-0.365,0.051,0.315,0.622,0.874,1.22,1.509,2.012,2.219,2.482,2.723,3.23,3.529,3.922,4.281,4.754,5.082,5.275,5.545,5.998,6.447,6.897,7.279,7.478,7.554,7.831,7.968,8.087,8.398,8.62,8.948,9.28,9.682,9.812,10.039,10.24,10.58,10.714,10.868,11.125,11.391,11.536,11.661,11.898,11.958,12.059,12.125]}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 90,
+                  "maxItems": 90
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 1
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 47816,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 374,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 48190
+  },
+  "user": null,
+  "metadata": {}
+}

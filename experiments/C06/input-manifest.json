@@ -1,0 +1,102 @@
+{
+  "benchmark_id": "C06",
+  "source_data_path": "/Users/chiragchivate/Documents/Codex/2026-10-30/https-sites-stat-columbia-edu-liam/outputs/neural-data-bench/data/cache/C06/data.npz",
+  "source_data_sha256": "91154dac913910f2a0dd4c60985fc886eecb426970b3589a24e919836a4f543b",
+  "n_test": 24,
+  "test_shape": [
+    24,
+    3,
+    900
+  ],
+  "n_prediction_records": 24,
+  "prediction_shape": [
+    900
+  ],
+  "record_layout": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "id": 19
+    },
+    {
+      "id": 20
+    },
+    {
+      "id": 21
+    },
+    {
+      "id": 22
+    },
+    {
+      "id": 23
+    }
+  ],
+  "metadata": {
+    "units": {
+      "input": "dF/F in publisher scale; dt seconds",
+      "output": "expected counts per native frame smoothed with Gaussian sigma 0.2 s"
+    },
+    "sampling_rate_hz": "Native per recording, approximately 7.51 or 7.8125 Hz; channel 2 supplies exact median dt"
+  },
+  "metadata_sha256": "d79cd71b891de00ce8685644634eaa2fd0befc3c4d775e5609df0c1b665e30c8",
+  "selection": "Every retained test case; D02 returns consecutive disjoint100-sample output chunks while retaining full input sweep.",
+  "serialization": "Lossless Python JSON float representation; nonfinite inputs to null.",
+  "protocol": "Retained custom-protocol fallback; zero-shot, no labeled calibration or external fitting.",
+  "metric": "animal_mean_neuron_pearson_smoothed200ms",
+  "direction": "higher"
+}

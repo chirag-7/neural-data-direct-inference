@@ -1,0 +1,131 @@
+{
+  "id": "resp_030bd8e199418c15016ae7fb3d6e3087d28caf7b9c3cf1e8c7",
+  "object": "response",
+  "created_at": 1793588029,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793588031,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 8192,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_030bd8e199418c15016ae7fb3dd43487d2990ad15ea2328c58",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":3456,\"value\":[0.0]},{\"id\":3457,\"value\":[0.0]},{\"id\":3458,\"value\":[0.0]},{\"id\":3459,\"value\":[0.0]},{\"id\":3460,\"value\":[0.0]},{\"id\":3461,\"value\":[0.0]},{\"id\":3462,\"value\":[0.0]},{\"id\":3463,\"value\":[0.0]},{\"id\":3464,\"value\":[0.0]},{\"id\":3465,\"value\":[0.0]},{\"id\":3466,\"value\":[0.0]},{\"id\":3467,\"value\":[0.0]},{\"id\":3468,\"value\":[0.0]},{\"id\":3469,\"value\":[0.0]},{\"id\":3470,\"value\":[0.0]},{\"id\":3471,\"value\":[0.0]},{\"id\":3472,\"value\":[0.0]},{\"id\":3473,\"value\":[0.0]},{\"id\":3474,\"value\":[0.0]},{\"id\":3475,\"value\":[0.0]},{\"id\":3476,\"value\":[0.0]},{\"id\":3477,\"value\":[0.0]},{\"id\":3478,\"value\":[0.0]},{\"id\":3479,\"value\":[0.0]},{\"id\":3480,\"value\":[0.0]},{\"id\":3481,\"value\":[0.0]},{\"id\":3482,\"value\":[0.0]},{\"id\":3483,\"value\":[0.0]},{\"id\":3484,\"value\":[0.0]},{\"id\":3485,\"value\":[0.0]},{\"id\":3486,\"value\":[0.0]},{\"id\":3487,\"value\":[0.0]},{\"id\":3488,\"value\":[0.0]},{\"id\":3489,\"value\":[0.0]},{\"id\":3490,\"value\":[0.0]},{\"id\":3491,\"value\":[0.0]},{\"id\":3492,\"value\":[0.0]},{\"id\":3493,\"value\":[0.0]},{\"id\":3494,\"value\":[0.0]},{\"id\":3495,\"value\":[0.0]},{\"id\":3496,\"value\":[0.0]},{\"id\":3497,\"value\":[0.0]},{\"id\":3498,\"value\":[0.0]},{\"id\":3499,\"value\":[0.0]},{\"id\":3500,\"value\":[0.0]},{\"id\":3501,\"value\":[0.0]},{\"id\":3502,\"value\":[0.0]},{\"id\":3503,\"value\":[0.0]},{\"id\":3504,\"value\":[0.0]},{\"id\":3505,\"value\":[0.0]}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 1,
+                  "maxItems": 1
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 50,
+            "maxItems": 50
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3162,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 606,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 3768
+  },
+  "user": null,
+  "metadata": {}
+}

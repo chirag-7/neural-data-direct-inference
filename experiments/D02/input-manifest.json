@@ -1,0 +1,87 @@
+{
+  "benchmark_id": "D02",
+  "source_data_path": "/Users/chiragchivate/Documents/Codex/2026-10-30/https-sites-stat-columbia-edu-liam/outputs/neural-data-bench/data/cache/D02/data.npz",
+  "source_data_sha256": "2a5f30d8b6f07f981a0cf2c6e7717543185ef3c8732a17e8bfefef500c7a49ca",
+  "n_test": 2,
+  "test_shape": [
+    2,
+    500
+  ],
+  "n_prediction_records": 10,
+  "prediction_shape": [
+    100
+  ],
+  "record_layout": [
+    {
+      "id": 0,
+      "source_row": 0,
+      "target_start": 0,
+      "target_stop": 100
+    },
+    {
+      "id": 1,
+      "source_row": 0,
+      "target_start": 100,
+      "target_stop": 200
+    },
+    {
+      "id": 2,
+      "source_row": 0,
+      "target_start": 200,
+      "target_stop": 300
+    },
+    {
+      "id": 3,
+      "source_row": 0,
+      "target_start": 300,
+      "target_stop": 400
+    },
+    {
+      "id": 4,
+      "source_row": 0,
+      "target_start": 400,
+      "target_stop": 500
+    },
+    {
+      "id": 5,
+      "source_row": 1,
+      "target_start": 0,
+      "target_stop": 100
+    },
+    {
+      "id": 6,
+      "source_row": 1,
+      "target_start": 100,
+      "target_stop": 200
+    },
+    {
+      "id": 7,
+      "source_row": 1,
+      "target_start": 200,
+      "target_stop": 300
+    },
+    {
+      "id": 8,
+      "source_row": 1,
+      "target_start": 300,
+      "target_stop": 400
+    },
+    {
+      "id": 9,
+      "source_row": 1,
+      "target_start": 400,
+      "target_stop": 500
+    }
+  ],
+  "metadata": {
+    "input": "float64 (sweep,500), current pA relative to pre-step current, block-averaged 500 Hz",
+    "target": "float64 (sweep,500), voltage deflection mV relative to measured pre-stimulus rest",
+    "sampling_rate_hz": 500
+  },
+  "metadata_sha256": "3229e04b21d4d72cebeacbec758459055c30925c3671bc1238906a752dcd3f24",
+  "selection": "Every retained test case; D02 returns consecutive disjoint100-sample output chunks while retaining full input sweep.",
+  "serialization": "Lossless Python JSON float representation; nonfinite inputs to null.",
+  "protocol": "Retained custom-protocol fallback; zero-shot, no labeled calibration or external fitting.",
+  "metric": "rmse",
+  "direction": "lower"
+}

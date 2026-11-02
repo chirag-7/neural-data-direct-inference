@@ -1,0 +1,96 @@
+{
+  "benchmark_id": "M04",
+  "source_data_path": "/Users/chiragchivate/Documents/Codex/2026-10-30/https-sites-stat-columbia-edu-liam/outputs/neural-data-bench/data/cache/cognitive-v1.npz",
+  "source_data_sha256": "dd1c541235d7e69ed2cc6271a474c1686ddae9bc686fc5b4f6e4f0e178fb3c7f",
+  "n_test": 24,
+  "test_shape": [
+    24,
+    2,
+    240
+  ],
+  "n_prediction_records": 24,
+  "prediction_shape": [
+    2
+  ],
+  "record_layout": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "id": 19
+    },
+    {
+      "id": 20
+    },
+    {
+      "id": 21
+    },
+    {
+      "id": 22
+    },
+    {
+      "id": 23
+    }
+  ],
+  "metadata": {},
+  "metadata_sha256": null,
+  "selection": "Every retained test case; D02 returns consecutive disjoint100-sample output chunks while retaining full input sweep.",
+  "serialization": "Lossless Python JSON float representation; nonfinite inputs to null.",
+  "protocol": "Retained custom-protocol fallback; zero-shot, no labeled calibration or external fitting.",
+  "metric": "range_normalized_mae",
+  "direction": "lower"
+}

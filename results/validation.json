@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "sealed_payload_hashes_checked": 673,
+  "completed_harness_batches_checked": 303,
+  "negative_parser_fixtures": 6,
+  "references_independently_rescored": 11,
+  "admitted_tasks": 11,
+  "complete_four_model_benchmarks": 10,
+  "api_cost_upper_usd": 19.150566312500004,
+  "sol_api_prediction_files": 0,
+  "credential_prefix_matches": 0
+}

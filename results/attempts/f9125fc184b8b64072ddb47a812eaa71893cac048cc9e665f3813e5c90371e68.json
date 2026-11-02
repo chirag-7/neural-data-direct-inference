@@ -1,0 +1,21 @@
+{
+  "benchmark_id": "M01",
+  "model": "gpt-5-2025-08-07",
+  "regime": "zero_shot",
+  "start": 1024,
+  "stop": 1040,
+  "request_path": "work/requests/f9125fc184b8b64072ddb47a812eaa71893cac048cc9e665f3813e5c90371e68.json",
+  "prompt_sha256": "076c0db2d52741e661d56f4b9ca19f19a792adfdf677f9d128a6edb27d3882ab",
+  "source_data_sha256": "3ae8fd34be70bb7f3234ff470f6a6e40c3cbd3c5be5a4466cfa410cd293e841b",
+  "prompt_path": "experiments/M01/prompts/zero_shot-gpt5-repair-01024.txt",
+  "n_predictions": 16,
+  "active": true,
+  "repair": "Batch 64 to16 after output truncation; scientific inputs unchanged, context batch differs; no score feedback.",
+  "request_sha256": "f9125fc184b8b64072ddb47a812eaa71893cac048cc9e665f3813e5c90371e68",
+  "status": "http_error",
+  "started_unix": 1793587067.0863209,
+  "conservative_reservation_usd": 0.087560625,
+  "http_status": 400,
+  "error": "{\"error\": \"Request is not sealed direct inference\"}",
+  "elapsed_seconds": 0.004312038421630859
+}

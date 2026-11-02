@@ -1,25 +1,60 @@
-# Neural Data: Direct Inference
+# Neural Data · Direct Inference
 
-Pretrained general models return neuroscience predictions directly. **No model-written programs, model training, fitted estimator, tool calls or code execution occur inside model inference.** Evaluation code loads inputs, sends frozen requests, parses predictions and scores saved outputs.
+General models receive neuroscience inputs and return **actual predictions**. No model-written solver is executed, no external estimator is fitted, and pretrained weights remain fixed. This is separate from the [earlier code-generation study](https://github.com/chirag-7/neural-data-bench).
 
-Models: GPT-4.1 (`gpt-4.1-2025-04-14`), GPT-5 (`gpt-5-2025-08-07`), GPT-5.6 Sol and GPT-6.1 Sol. API availability is checked before paid execution; the Sol primary route is the ChatGPT-authenticated Codex harness. Reasoning effort is medium for models supporting it; GPT-4.1 has no reasoning-effort parameter. Requested model identities and usage are recorded per request; provider-reported identity is unavailable where the harness does not expose it.
+## Pilot stopping point
 
-## Current state
+**10 benchmarks complete across four models, across 8 broad categories.** An 11th task, calcium-to-spike inference, has incomplete GPT-5 and GPT-6.1 Sol panels. The user reduced scope from30 inherited candidates to approximately 10–15 completed benchmarks; 19 remaining candidates are explicitly deferred rather than padded with partial scores or claims of model inability.
 
-Thirty candidates inherited from the [separate code-generation study](https://github.com/chirag-7/neural-data-bench) are tracked in [the registry](registry/tasks.json). None of that study's generated-model scores is a direct-inference result. Three tasks (K01, K06 and I10) now have complete primary panels across all four models, with both Sol models rerun through the Codex harness. M01 remains incomplete. Four tasks have sealed requests for their entire retained test sets: K01 morphology (457 cells), K06 PV/SST (71 cells), I10 MRI quality (265 scans), and M01 mouse choice (1,842 cases).
+[Primary scores](results/primary-report.md) · [Descriptive analysis](analysis/README.md) · [Per-task directory](experiments) · [Methods](docs/methods.md) · [Validation](results/validation.json)
 
-These first four explicitly retain their earlier **custom data protocols**, as a fallback authorized by the user when official matching is impractical. They do not claim to restore official benchmarks or establish a current specialist winner. Other entries remain candidates, not completed experiments. Benchmark admission/deferral is based on data, interface and budget feasibility, not favorable performance.
+Models: GPT-4.1 (`gpt-4.1-2025-04-14`), GPT-5 (`gpt-5-2025-08-07`), GPT-5.6 Sol and GPT-6.1 Sol.
 
-Primary condition: zero-shot, with semantic task/label definitions and no labeled examples. A fixed eight-training-example condition can be prepared separately; pretrained weights remain fixed. Conditions are never pooled. Test cases within each request are processed as a batch; batch sizes and row order are frozen and may affect model behavior.
+- **Both Sol models are Codex-harness-only**, authenticated through ChatGPT. Harness traces are checked for tool use. Requested identity is recorded separately from provider identity; the CLI does not independently expose a returned snapshot.
+- GPT-4.1 and GPT-5 use the restricted Responses API bridge. Sol API prediction results were removed from the current study tree. Usage-only receipts remain for total spending accounting; prior Git snapshots are not rewritten.
+- Primary conditions are zero-shot except L04, which provides64 fixed, uniformly spaced training examples in context. No test labels are supplied.
+- Truncation and timeout recoveries are explicitly recorded. Reasoning effort, batch sizes and transport differ in some panels; the study does **not** isolate a pure model-generation effect.
 
-[Methods](docs/methods.md) · [Model availability](results/model-availability.json) · [Frozen request inventory](registry/request-seal.json) · [Task registry](registry/tasks.json)
+## Read the results correctly
 
-## Reproduction and privacy
+Every full score covers every retained test case under its custom protocol. These are **not30 restored official benchmarks**. A valid score may be poor. Missing/incomplete panels have no assigned score. Every website plot aligns direction so better performance is higher; native score tables preserve the original units.
 
-`scripts/prepare.py` builds losslessly serialized numerical prompts from the existing locally cached inputs without reading test labels. Raw source data and prompts containing their feature rows stay ignored; tracked manifests retain input and prompt hashes. `scripts/run_requests.py` sends only sealed requests through a loopback, memory-only credential bridge, with no silent retries. `scripts/score.py` scores saved outputs without calling any model. Source dataset use terms remain upstream.
+The 11 task-specific reference prediction files were independently rescored on the same retained cases. They include local trained methods, exact-likelihood estimators and archived specialist masks. They are **not certified latest specialist SOTA**, and their training/calibration budgets differ from the general models. [Reference audit](results/reference-validation.json).
 
-The user-approved new-study API spending ceiling is $20 total, including historical calls. The original bridge has been stopped and its in-memory credential cleared; a new bridge permits only GPT-4.1 and GPT-5 API requests. No paid request can be sent until the user supplies a dedicated API key in the local password form. Credentials are never persisted, printed, committed or published. Availability does not guarantee generation success; all actual failures remain recorded.
+The pilot's descriptive endpoint comparison favors 6.1 over 4.1 on 10/10 complete tasks, while only 3/10 improve strictly at every adjacent generation. This is not a scaling law or a statistical/practical superiority claim. [Assumptions and interpretation](analysis/README.md).
 
-## Execution routing update
+## Organization
 
-GPT-5.6 Sol and GPT-6.1 Sol now use the Codex harness with ChatGPT authentication. GPT-4.1 and GPT-5 use the API. Sol API prediction results have been removed from the current study tree. Both Sol models are harness-only; usage-only receipts remain for spending accounting. See [routing and comparison limitations](docs/execution-routing.md) and [primary results](results/primary-report.md) and [harness results](results/codex-harness/summary.json).
+| Location | Contents |
+|---|---|
+| `experiments/<ID>/` | Input manifest, specific protocol, recovery notes and execution report |
+| `registry/` |30 source candidates, feasibility audit, frozen request digests and routing |
+| `results/primary-summary.json` | Canonical final scores and coverage across transports |
+| `results/raw/`, `results/attempts/` | GPT-4.1/GPT-5 API observations only |
+| `results/codex-harness/` | Sol prediction outputs, event traces and request metadata |
+| `results/*-attempt-history/` | Preserved capacity/quota failures and explicitly retried attempts |
+| `results/predictions/` | Complete native prediction arrays, without target labels |
+| `analysis/` | Descriptive aggregate tables, caveats and interpretation |
+| `web/` | Reviewable website assets and aggregate data; no raw input rows |
+| `scripts/` | Preparation, routing, strict parsing, native scoring, validation and website data generation |
+
+## Reproduction and limits
+
+Source data and physiological input prompts remain local and ignored. Dataset-specific manifests record source hashes, shapes, rendering, selection, target definitions and upstream links. Reconstructing the cached arrays requires upstream dataset access and the linked acquisition adapters; redistribution terms remain upstream. This repository does not bundle source data or claim one-command inference reproduction without those prerequisites.
+
+With the verified source caches available, the scoring scripts reproduce results from saved prediction outputs without calling a model:
+
+```sh
+python3 scripts/score.py
+python3 scripts/score_harness.py
+python3 scripts/score_extended.py
+python3 scripts/score_images.py
+python3 scripts/assemble_primary_results.py
+python3 scripts/build_site_data.py
+python3 scripts/finalize_reports.py
+python3 scripts/validate_study.py
+```
+
+Use the pinned numerical dependencies in `requirements.txt`. Input preparation never reads test targets. The scorer validates IDs, dimensions, finite values, task bounds and complete coverage; reference rescoring uses the same native target/aggregation contracts. The website is buildless; preview with `python3 -m http.server --directory web`.
+
+The conservative new-study API cost upper bound is approximately **$19.15**, including discarded Sol API calls, below the approved **$20 total cap**. It assumes uncached/cache-write pricing and is not an invoice; actual billing may be lower. Codex subscription usage is separate. Credentials are memory-only, never committed. No further paid inference is planned at this stopping point.

@@ -26,6 +26,7 @@ def parse_response(data,entry):
  return dict(zip(expected,values))
 
 def metric(bid,p,y,groups):
+ p=np.asarray(p,dtype=np.float64)
  if bid=='K01':return float(f1_score(y,p.astype(int),labels=[0,1],average='macro',zero_division=0))
  if bid=='I10':return float(balanced_accuracy_score(y,p.astype(int)))
  if bid=='K06':return float(np.mean([np.mean([np.mean(p[groups==g]==y[groups==g]) for g in np.unique(groups[y==c])]) for c in (0,1)]))
@@ -37,6 +38,7 @@ def metric(bid,p,y,groups):
 def main():
  seal=json.loads((ROOT/'registry/request-seal.json').read_text());items={};attempts=[]
  for digest,entry in seal['requests'].items():
+  if entry.get('output_kind') in ('tensor','polygons'):continue
   path=ROOT/f'results/attempts/{digest}.json'
   if not path.exists():continue
   a=json.loads(path.read_text());a['output_valid']=False
@@ -45,14 +47,17 @@ def main():
     raw=ROOT/a['response_path'];assert hashlib.sha256(raw.read_bytes()).hexdigest()==a['response_sha256']
     values=parse_response(json.loads(raw.read_text()),entry)
     a['output_valid']=True
-    key=(entry['benchmark_id'],entry['model'],entry['regime'])
-    panel=items.setdefault(key,{})
-    if set(values)&set(panel):raise ValueError('Overlapping batches')
-    panel.update(values)
+    if entry.get('primary_include',True):
+     key=(entry['benchmark_id'],entry['model'],entry['regime'])
+     panel=items.setdefault(key,{})
+     if set(values)&set(panel):raise ValueError('Overlapping batches')
+     panel.update(values)
+    else:a['primary_excluded']=True
    except (ValueError,AssertionError,KeyError,TypeError) as exc:a['validation_error']=str(exc)
   attempts.append(a)
  summaries=[]
  for task in seal['task_records']:
+  if task.get('output_kind') in ('tensor','polygons'):continue
   bid=task['benchmark_id'];data=OLD/f'data/cache/{bid}/data.npz'
   assert hashlib.sha256(data.read_bytes()).hexdigest()==task['source_data_sha256']
   # Scorer-only target access; never returned to the model API.
@@ -61,7 +66,7 @@ def main():
   for model in ('gpt-4.1-2025-04-14','gpt-5-2025-08-07'):
    panel=items.get((bid,model,task['regime']),{});ids=sorted(panel)
    full=ids==list(range(len(truth)))
-   row=dict(benchmark_id=bid,model=model,transport='openai_api',regime=task['regime'],n_expected=len(truth),n_valid_predictions=len(ids),
+   row=dict(benchmark_id=bid,model=model,transport='openai_api',reasoning_effort='low (recovery)' if bid=='M01' and model=='gpt-5-2025-08-07' else ('none' if model.startswith('gpt-4') else 'medium'),regime=task['regime'],n_expected=len(truth),n_valid_predictions=len(ids),
     coverage=len(ids)/len(truth),complete=full,status='complete' if full else ('partial' if ids else 'not_measured'),
     metric=task['metric'],direction='lower' if bid=='M01' else 'higher',score=None,
     official_benchmark=False,specialist_current_best_verified=False)

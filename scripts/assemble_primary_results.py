@@ -8,16 +8,18 @@ def main():
     routing = json.loads((ROOT/'registry/execution-routing.json').read_text())['primary_routes']
     api = json.loads((ROOT/'results/summary.json').read_text())['summaries']
     harness = json.loads((ROOT/'results/codex-harness/summary.json').read_text())['summaries']
-    rows = [r for r in api+harness if r['transport'] == routing[r['model']]]
+    extended = json.loads((ROOT/'results/extended-summary.json').read_text())['summaries'] if (ROOT/'results/extended-summary.json').exists() else []
+    images = json.loads((ROOT/'results/image-summary.json').read_text())['summaries'] if (ROOT/'results/image-summary.json').exists() else []
+    rows = [r for r in api+harness+extended+images if r['transport'] == routing[r['model']]]
     rows.sort(key=lambda r: (r['benchmark_id'], list(routing).index(r['model'])))
     result = dict(comparison_caveat='Transport and model generation are confounded. Primary Sol predictions use Codex; older models use API.', summaries=rows)
     (ROOT/'results/primary-summary.json').write_text(json.dumps(result, indent=2)+'\n')
     lines = ['# Primary direct-inference results', '', result['comparison_caveat'], '',
              'Only complete retained test panels receive scores. GPT-5.6 Sol and GPT-6.1 Sol API prediction results have been removed; only their Codex harness predictions are used.', '',
-             '| Task | Requested model | Execution | Predictions / expected | Native metric | Direction | Score |',
-             '|---|---|---|---|---|---|---|']
+             '| Task | Requested model | Execution | Predictions / expected | Condition | Reasoning | Native metric | Direction | Score |',
+             '|---|---|---|---|---|---|---|---|---|']
     for r in rows:
-        lines.append(f"| {r['benchmark_id']} | {r['model']} | {r['transport']} | {r['n_valid_predictions']} / {r['n_expected']} | {r['metric']} | {r['direction']} is better | {r['score'] if r['score'] is not None else 'Incomplete'} |")
+        lines.append(f"| {r['benchmark_id']} | {r['model']} | {r['transport']} | {r['n_valid_predictions']} / {r['n_expected']} | {r.get('regime','zero_shot')} | {r.get('reasoning_effort','medium')} | {r['metric']} | {r['direction']} is better | {r['score'] if r['score'] is not None else 'Incomplete'} |")
     (ROOT/'results/primary-report.md').write_text('\n'.join(lines)+'\n')
 
 if __name__ == '__main__':

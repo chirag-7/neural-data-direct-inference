@@ -1,0 +1,40 @@
+{
+  "source_data_sha256": "fac163a34bc8efdbd4cc20e0b21cc6ab10d9306010a648a310ca85e997f87909",
+  "source_shape": [
+    2,
+    2,
+    727,
+    546
+  ],
+  "records": [
+    {
+      "id": 0,
+      "crop_xyxy": [
+        0,
+        0,
+        546,
+        727
+      ],
+      "width": 546,
+      "height": 727,
+      "png_sha256": "70c9ee125ee207056caa8eda2aa68c5a0068c782b1455c2261c429bc4a76fc35"
+    },
+    {
+      "id": 1,
+      "crop_xyxy": [
+        0,
+        0,
+        204,
+        80
+      ],
+      "width": 204,
+      "height": 80,
+      "png_sha256": "62eeccac4ee5340711957324ab1686b300e91433bfb6a1e20922104bf52c7185"
+    }
+  ],
+  "input_transform": "Crop only padding using supplied input valid mask; publisher-normalized float intensity quantized to8bit with max absolute error0.5/255. No resizing, enhancement or target access.",
+  "output_transform": "Each direct predicted polygon is filled by deterministic Pillow ImageDraw.polygon; later polygons overwrite overlaps. Padding stays0. This geometry decoder does not infer objects or fit any model.",
+  "metric": "equal_image_rater_object_f1_iou_0.5",
+  "direction": "higher",
+  "protocol": "Custom direct-image protocol, not a claim of official SynAPSeg leaderboard replication."
+}

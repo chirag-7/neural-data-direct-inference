@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19a1b-0a1c-7923-9c9f-5839903118ff"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"predictions\":[{\"id\":0,\"value\":[0,2,4,5,7,9,10,11,12,13,11,9,7,5,4,2,0,-2,-4,-6,-10,-14,-18,-22,-25,-28,-30,-31,-31,-29,-27,-24,-22,-18,-14,-9,-5,-2,0,3,5,7,9,10,11,12,13,11,9,7,5,4,2,0,-2,-4,-6,-10,-14,-18,-22,-25,-28,-30,-31,-31,-29,-27,-24,-22,-18,-14,-9,-5,-2,0,3,5,7,9,10,11,12,13,11,9,7,5,4,2]}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":58534,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":4341,"reasoning_output_tokens":4137}}

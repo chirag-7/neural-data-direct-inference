@@ -1,0 +1,134 @@
+{
+  "completion_across_all_admitted_tasks": {
+    "gpt-4.1-2025-04-14": 11,
+    "gpt-5-2025-08-07": 10,
+    "gpt-5.6-sol": 11,
+    "gpt-6.1-sol": 10
+  },
+  "n_admitted_tasks": 11,
+  "n_complete_four_model_benchmarks": 10,
+  "endpoint_6_1_vs_4_1": {
+    "better": 10,
+    "worse": 0,
+    "numeric_tie": 0
+  },
+  "strict_stepwise": [
+    "B03",
+    "K06",
+    "L04"
+  ],
+  "nondecreasing": [
+    "B03",
+    "J08",
+    "K06",
+    "L04"
+  ],
+  "best_general_beats_available_reference": [
+    "B03",
+    "K05",
+    "K06"
+  ],
+  "rows": [
+    {
+      "benchmark_id": "B03",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": true,
+      "nondecreasing_allowing_ties": true,
+      "best_general_numerically_beats_reference": true,
+      "condition": "Zero-shot",
+      "category": "Extracellular data"
+    },
+    {
+      "benchmark_id": "D02",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": false,
+      "nondecreasing_allowing_ties": false,
+      "best_general_numerically_beats_reference": false,
+      "condition": "Zero-shot",
+      "category": "Voltage & intracellular"
+    },
+    {
+      "benchmark_id": "I10",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": false,
+      "nondecreasing_allowing_ties": false,
+      "best_general_numerically_beats_reference": false,
+      "condition": "Zero-shot",
+      "category": "Neuroimaging"
+    },
+    {
+      "benchmark_id": "J08",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": false,
+      "nondecreasing_allowing_ties": true,
+      "best_general_numerically_beats_reference": false,
+      "condition": "Zero-shot",
+      "category": "Anatomy & microscopy"
+    },
+    {
+      "benchmark_id": "K01",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": false,
+      "nondecreasing_allowing_ties": false,
+      "best_general_numerically_beats_reference": false,
+      "condition": "Zero-shot",
+      "category": "Cell & molecular data"
+    },
+    {
+      "benchmark_id": "K05",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": false,
+      "nondecreasing_allowing_ties": false,
+      "best_general_numerically_beats_reference": true,
+      "condition": "Zero-shot",
+      "category": "Cell & molecular data"
+    },
+    {
+      "benchmark_id": "K06",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": true,
+      "nondecreasing_allowing_ties": true,
+      "best_general_numerically_beats_reference": true,
+      "condition": "Zero-shot",
+      "category": "Cell & molecular data"
+    },
+    {
+      "benchmark_id": "L04",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": true,
+      "nondecreasing_allowing_ties": true,
+      "best_general_numerically_beats_reference": false,
+      "condition": "64 in-context examples",
+      "category": "Statistical inference"
+    },
+    {
+      "benchmark_id": "M01",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": false,
+      "nondecreasing_allowing_ties": false,
+      "best_general_numerically_beats_reference": false,
+      "condition": "Zero-shot",
+      "category": "Cognition & control"
+    },
+    {
+      "benchmark_id": "M04",
+      "endpoint_outcome": "better",
+      "strict_stepwise_improvement": false,
+      "nondecreasing_allowing_ties": false,
+      "best_general_numerically_beats_reference": false,
+      "condition": "Zero-shot",
+      "category": "Cognition & control"
+    }
+  ],
+  "tie_tolerance": 1e-09,
+  "statistical_significance_tested": false,
+  "scaling_law_claim": false,
+  "limitations": [
+    "These are retained custom protocols, not30 restored official benchmarks.",
+    "Sol models use the Codex harness; GPT-4.1/GPT-5 use API. Transport, instructions and some reasoning budgets differ.",
+    "No model-generated solver, external fitting, tool calls or weight updates are used in direct inference. L04 has fixed in-context examples.",
+    "Complete-case comparisons exclude the calcium task with missing model outputs; completion and survivorship bias must be considered separately.",
+    "One prediction run per final configuration; no claim of a scaling law, statistical equivalence or broad population-level superiority.",
+    "References are verified local/archived comparisons, not certified latest specialist SOTA."
+  ]
+}

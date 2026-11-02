@@ -1,0 +1,131 @@
+{
+  "id": "resp_016f03fb9d6bb7aa016ae7f68d57b887d28d745e35f0b39db4",
+  "object": "response",
+  "created_at": 1793586829,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793586836,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 8192,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_016f03fb9d6bb7aa016ae7f68ee00487d290f6742bd5a4d7f5",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":0,\"value\":[-8.620803833007812,-7.81805419921875,-7.016425132751465,-6.2178239822387705,-5.396435737609864,-4.598981857299805,-3.964041709899903,-3.0536117553710906,-2.221561431884765,-1.421402931213379,0.18625688171386724,1.3823251342773422,1.5742968826293948,2.094652938842775,2.0703594207763674,2.3925277404785166,2.106991882324219,2.555664901733402,3.202137603759766,3.761758804321291,4.674808929443359,5.134125785827637,6.556708335876465,8.087334156036377,8.99816143035889,9.371092223167418,10.146226234436034,10.444402313232421,10.393946571350097,10.417885322570802,10.505913925170898,11.583516359329224,11.077270511627198,11.331468620300292,12.140623092651368,12.548161125183106,12.820450640678407,13.0649387550354,13.31989392089844,13.527551174163819,14.158574496269228,14.018428802490236,13.74828868865967,14.046216869354245,14.274893875122072,14.567850303649902,15.048119335174561,15.787152709960938,15.933593406677247,16.359637241363528,16.475609397888186,16.393704376220705,16.62779590606689,16.966803588867186,16.991156959533693,17.109087142944338,17.043354476928713,17.168426055908203,17.210459418296813,17.533327178955076,17.48681010437012,17.899053817749027,17.774271778106686,17.601247978210447,17.776189575195313,18.26139163970947,18.50336148071289,19.02100757598877,19.581544998168947,20.145607471466065,20.434042949676514,20.866187362670897,21.43408248901367,21.889850654602052,22.25121910095215,22.573473648071293,22.536580276489258,22.41872248840332,22.48059814453125,22.400126861572265,22.309665374755856,22.072341598510744,21.677459259033203,21.32647165298462,21.00636282348633,20.610064697265623,20.346043395996093,20.143642372131348,19.859953506469726,19.440543655395508] }]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 90,
+                  "maxItems": 90
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 1
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 47816,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 742,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 48558
+  },
+  "user": null,
+  "metadata": {}
+}

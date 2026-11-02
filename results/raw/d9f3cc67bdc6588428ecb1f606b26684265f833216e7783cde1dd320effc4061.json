@@ -1,0 +1,128 @@
+{
+  "id": "resp_0a1b5cea5814461c016ae7f775975887d29a61a490c1f451be",
+  "object": "response",
+  "created_at": 1793587061,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793587064,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 2048,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_0a1b5cea5814461c016ae7f775fa3087d2ac5f2b050efd669c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":896,\"value\":0.98},{\"id\":897,\"value\":0.90},{\"id\":898,\"value\":0.65},{\"id\":899,\"value\":0.90},{\"id\":900,\"value\":0.10},{\"id\":901,\"value\":0.70},{\"id\":902,\"value\":0.60},{\"id\":903,\"value\":0.20},{\"id\":904,\"value\":0.15},{\"id\":905,\"value\":0.10},{\"id\":906,\"value\":0.25},{\"id\":907,\"value\":0.10},{\"id\":908,\"value\":0.08},{\"id\":909,\"value\":0.70},{\"id\":910,\"value\":0.96},{\"id\":911,\"value\":0.15},{\"id\":912,\"value\":0.70},{\"id\":913,\"value\":0.14},{\"id\":914,\"value\":0.08},{\"id\":915,\"value\":0.06},{\"id\":916,\"value\":0.08},{\"id\":917,\"value\":0.18},{\"id\":918,\"value\":0.12},{\"id\":919,\"value\":0.15},{\"id\":920,\"value\":0.13},{\"id\":921,\"value\":0.22},{\"id\":922,\"value\":0.21},{\"id\":923,\"value\":0.08},{\"id\":924,\"value\":0.70},{\"id\":925,\"value\":0.12},{\"id\":926,\"value\":0.70},{\"id\":927,\"value\":0.99},{\"id\":928,\"value\":0.88},{\"id\":929,\"value\":0.10},{\"id\":930,\"value\":0.95},{\"id\":931,\"value\":0.99},{\"id\":932,\"value\":0.85},{\"id\":933,\"value\":0.95},{\"id\":934,\"value\":0.85},{\"id\":935,\"value\":0.82},{\"id\":936,\"value\":0.30},{\"id\":937,\"value\":0.20},{\"id\":938,\"value\":0.12},{\"id\":939,\"value\":0.15},{\"id\":940,\"value\":0.90},{\"id\":941,\"value\":0.65},{\"id\":942,\"value\":0.93},{\"id\":943,\"value\":0.92},{\"id\":944,\"value\":0.98},{\"id\":945,\"value\":0.60},{\"id\":946,\"value\":0.99},{\"id\":947,\"value\":0.85},{\"id\":948,\"value\":0.95},{\"id\":949,\"value\":0.96},{\"id\":950,\"value\":0.60},{\"id\":951,\"value\":0.70},{\"id\":952,\"value\":0.60},{\"id\":953,\"value\":0.90},{\"id\":954,\"value\":0.85},{\"id\":955,\"value\":0.18},{\"id\":956,\"value\":0.08},{\"id\":957,\"value\":0.08},{\"id\":958,\"value\":0.15},{\"id\":959,\"value\":0.08}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 64,
+            "maxItems": 64
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4435,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 647,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5082
+  },
+  "user": null,
+  "metadata": {}
+}

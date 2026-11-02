@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a19a1e-0684-7a12-b750-bd50a8fbfb66"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"predictions\":[{\"id\":8,\"value\":[0.18,2.6]},{\"id\":9,\"value\":[0.48,2.9]},{\"id\":10,\"value\":[0.62,5.6]},{\"id\":11,\"value\":[0.5,1.6]}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":13831,"cached_input_tokens":8064,"cache_write_input_tokens":0,"output_tokens":2762,"reasoning_output_tokens":2685}}

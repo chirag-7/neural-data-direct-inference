@@ -1,0 +1,147 @@
+{
+  "id": "resp_0027f4c285021770016ae7fb1ed64487d2b958c6665974f9eb",
+  "object": "response",
+  "created_at": 1793587998,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793588001,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 8192,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_0027f4c285021770016ae7fb1f5c4487d2ae1e74ff84febcbf",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":0,\"value\":[{\"points\":[[62,285],[68,288],[63,294],[59,291]]},{\"points\":[[88,372],[93,373],[94,379],[88,380]]},{\"points\":[[115,424],[121,425],[121,429],[115,428]]},{\"points\":[[140,575],[146,577],[145,581],[139,580]]},{\"points\":[[147,346],[152,349],[149,355],[144,353]]},{\"points\":[[151,365],[156,368],[154,373],[149,371]]},{\"points\":[[156,335],[161,338],[158,343],[153,341]]},{\"points\":[[171,416],[176,418],[174,423],[169,422]]},{\"points\":[[179,352],[185,355],[182,363],[176,359]]},{\"points\":[[187,373],[193,374],[193,380],[187,380]]},{\"points\":[[193,294],[199,297],[197,302],[192,301]]},{\"points\":[[209,329],[214,331],[210,335],[206,333]]},{\"points\":[[217,425],[222,427],[220,431],[215,429]]},{\"points\":[[230,366],[236,367],[236,372],[229,372]]},{\"points\":[[238,343],[244,345],[241,351],[235,349]]},{\"points\":[[247,463],[251,467],[248,471],[243,468]]},{\"points\":[[251,246],[256,247],[255,252],[250,251]]},{\"points\":[[262,448],[268,450],[266,455],[261,453]]},{\"points\":[[280,301],[286,304],[285,308],[279,306]]},{\"points\":[[287,272],[292,274],[290,278],[285,276]]},{\"points\":[[297,456],[302,459],[300,463],[295,461]]},{\"points\":[[311,242],[316,244],[315,249],[309,248]]},{\"points\":[[327,353],[333,355],[330,360],[325,359]]},{\"points\":[[335,201],[340,203],[339,208],[333,207]]},{\"points\":[[347,331],[353,335],[348,338],[344,334]]},{\"points\":[[368,457],[375,460],[373,464],[367,461]]},{\"points\":[[390,413],[395,415],[393,419],[388,418]]},{\"points\":[[404,406],[411,410],[406,413],[400,410]]},{\"points\":[[440,335],[446,336],[444,341],[438,340]]},{\"points\":[[453,200],[459,201],[458,205],[452,204]]},{\"points\":[[464,495],[469,497],[467,501],[462,500]]}]}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_polygons",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "points": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer"
+                          },
+                          "minItems": 2,
+                          "maxItems": 2
+                        },
+                        "minItems": 3
+                      }
+                    },
+                    "required": [
+                      "points"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 1
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1021,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 635,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 1656
+  },
+  "user": null,
+  "metadata": {}
+}

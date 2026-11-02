@@ -1,0 +1,5 @@
+# C06: direct numeric inference
+
+Infer expected spike counts per native frame from one calcium recording, smoothed at Gaussian sigma0.2seconds. Input has3 channels x900 frames: channel0 is publisher dF/F; channel1 is valid-frame mask; channel2 is exact sampling interval seconds repeated on valid frames. Padding on the right has mask0. Native sampling is approximately7.5-7.8Hz. Return900 nonnegative finite expected counts in frame order, zero in padding. Offline/acausal inference within this recording is permitted. No recorded electrical events or cell-specific calibration are supplied.
+
+[Input manifest](input-manifest.json) freezes every retained test case, input hash, output layout and units. No test targets are read during preparation. No training examples, fitted models, or model-written code are used. Primary score: `animal_mean_neuron_pearson_smoothed200ms` (higher is better). This is an explicitly custom protocol, not a published official benchmark replication. Zero-shot missing calibration must be considered when interpreting comparisons with trained specialists.

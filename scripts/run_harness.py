@@ -8,6 +8,7 @@ MODELS = ['gpt-5.6-sol', 'gpt-6.1-sol']
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--tasks', nargs='+', required=True)
+    ap.add_argument('--regime', default='zero_shot')
     ap.add_argument('--models', nargs='+', choices=MODELS, default=MODELS)
     ap.add_argument('--limit', type=int)
     ap.add_argument('--workers', type=int, default=2)
@@ -17,7 +18,7 @@ def main():
     outdir.mkdir(parents=True, exist_ok=True)
     jobs = [(sha, entry) for sha, entry in seal['requests'].items()
             if entry['benchmark_id'] in args.tasks and entry['model'] in args.models
-            and entry['regime'] == 'zero_shot'
+            and entry['regime'] == args.regime and entry.get('primary_include',True) and entry.get('active',True)
             and not (outdir/f'{sha}.attempt.json').exists()]
     jobs.sort(key=lambda item: (args.tasks.index(item[1]['benchmark_id']), item[1]['start'], item[1]['model']))
     if args.limit:
@@ -36,14 +37,17 @@ def main():
         final = outdir/f'{digest}.predictions.json'
         cmd = ['codex', 'exec', '--ephemeral', '--ignore-user-config',
                '--skip-git-repo-check', '--sandbox', 'read-only', '-C', str(context),
-               '--model', entry['model'], '-c', 'model_reasoning_effort=medium',
+               '--model', entry['model'], '-c', 'model_reasoning_effort='+entry.get('reasoning_effort','medium'),
                '-c', 'forced_login_method=chatgpt', '-c', 'web_search=disabled',
                '--disable', 'shell_tool', '--disable', 'apps', '--disable', 'browser_use',
                '--disable', 'computer_use', '--disable', 'memories',
                '--output-schema', str(schema), '--output-last-message', str(final), '--json', '-']
-        record = dict(**entry, request_sha256=digest, transport='codex_harness_chatgpt',
+        for image_path,image_hash in zip(entry.get('image_paths',[]),entry.get('image_sha256',[])):
+            assert hashlib.sha256((ROOT/image_path).read_bytes()).hexdigest()==image_hash
+            cmd[-1:-1]=['--image',str(ROOT/image_path)]
+        record = dict(**{k:v for k,v in entry.items() if k!='reasoning_effort'}, request_sha256=digest, transport='codex_harness_chatgpt',
                       requested_model=entry['model'], provider_reported_model=None,
-                      reasoning_effort='medium', started_unix=time.time(), status='dispatched',
+                      reasoning_effort=entry.get('reasoning_effort','medium'), started_unix=time.time(), status='dispatched',
                       output_token_limit='Harness default; not the API request token ceiling',
                       command=cmd)
         attempt = outdir/f'{digest}.attempt.json'

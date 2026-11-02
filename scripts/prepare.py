@@ -99,7 +99,7 @@ def prepare(tasks,regimes):
   (out/'README.md').write_text(f'''# {bid}: direct inference\n\n{cfg['description']}\n\nAll {len(x)} retained test rows are evaluated. [Input manifest](input-manifest.json) records source hashes and serialization. This reuses the prior custom data contract as an explicitly allowed fallback; it is not a published official benchmark replication. No prior generated program or prediction is used. Primary metric: `{cfg['metric']}`. Zero-shot and fixed eight-example direct inference are separate conditions. Examples use deterministic, label-independent training indices.\n\nRequests contain only input rows, task instructions and, in the eight-example condition, the fixed training examples. Test labels are loaded only by the scorer after responses have been saved. No specialist score is imported without compatibility verification.\n''')
   task_records.sort(key=lambda r:(r['benchmark_id'],r['regime']))
  dump(existing,dict(revision='direct-inference-v1',models=MODELS,requests=seal,task_records=task_records,
-  no_model_calls_during_preparation=True,spending_ceiling_usd=5))
+  no_model_calls_during_preparation=True,spending_ceiling_usd=20))
  print(json.dumps(dict(tasks=tasks,regimes=regimes,total_sealed_requests=len(seal),
   exact_full_test_records=task_records),indent=2))
 

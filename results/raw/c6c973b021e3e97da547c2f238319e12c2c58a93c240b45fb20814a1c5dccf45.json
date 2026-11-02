@@ -1,0 +1,128 @@
+{
+  "id": "resp_0b59e18d8e18dfa5016ae7f78768f887d29e60a7f8bb83c201",
+  "object": "response",
+  "created_at": 1793587079,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793587082,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 2048,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_0b59e18d8e18dfa5016ae7f787d89487d2a1645deb96862b7f",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":1792,\"value\":0.38},{\"id\":1793,\"value\":0.4},{\"id\":1794,\"value\":0.8},{\"id\":1795,\"value\":0.72},{\"id\":1796,\"value\":0.28},{\"id\":1797,\"value\":0.22},{\"id\":1798,\"value\":0.36},{\"id\":1799,\"value\":0.38},{\"id\":1800,\"value\":0.58},{\"id\":1801,\"value\":0.92},{\"id\":1802,\"value\":0.75},{\"id\":1803,\"value\":0.6},{\"id\":1804,\"value\":0.85},{\"id\":1805,\"value\":0.56},{\"id\":1806,\"value\":0.18},{\"id\":1807,\"value\":0.22},{\"id\":1808,\"value\":0.37},{\"id\":1809,\"value\":0.42},{\"id\":1810,\"value\":0.28},{\"id\":1811,\"value\":0.14},{\"id\":1812,\"value\":0.2},{\"id\":1813,\"value\":0.32},{\"id\":1814,\"value\":0.14},{\"id\":1815,\"value\":0.16},{\"id\":1816,\"value\":0.6},{\"id\":1817,\"value\":0.85},{\"id\":1818,\"value\":0.85},{\"id\":1819,\"value\":0.9},{\"id\":1820,\"value\":0.62},{\"id\":1821,\"value\":0.48},{\"id\":1822,\"value\":0.55},{\"id\":1823,\"value\":0.59},{\"id\":1824,\"value\":0.62},{\"id\":1825,\"value\":0.56},{\"id\":1826,\"value\":0.48},{\"id\":1827,\"value\":0.62},{\"id\":1828,\"value\":0.55},{\"id\":1829,\"value\":0.8},{\"id\":1830,\"value\":0.8},{\"id\":1831,\"value\":0.7},{\"id\":1832,\"value\":0.28},{\"id\":1833,\"value\":0.22},{\"id\":1834,\"value\":0.34},{\"id\":1835,\"value\":0.16},{\"id\":1836,\"value\":0.12},{\"id\":1837,\"value\":0.15},{\"id\":1838,\"value\":0.11},{\"id\":1839,\"value\":0.34},{\"id\":1840,\"value\":0.88},{\"id\":1841,\"value\":0.7}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 50,
+            "maxItems": 50
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3594,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 557,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4151
+  },
+  "user": null,
+  "metadata": {}
+}

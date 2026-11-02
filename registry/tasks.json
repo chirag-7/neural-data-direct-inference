@@ -1,12 +1,12 @@
 {
-  "status": "30 inherited candidates; only explicitly prepared tasks are runnable",
+  "status": "Pilot stopped at11 admitted tasks;10 complete four-model panels; 19 source candidates deferred.",
   "tasks": [
     {
       "benchmark_id": "A09",
       "title": "Frame-level social behavior labels",
       "category": "A",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/A09",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -29,14 +29,15 @@
             "https://github.com/neuroethology/TREBA"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "A14",
       "title": "Missing pose imputation",
       "category": "A",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/A14",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -60,14 +61,15 @@
             "https://www.nature.com/articles/s41592-021-01106-6"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "A15",
       "title": "Annotated birdsong interval detection",
       "category": "A",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/A15",
-      "status": "deferred_input_modality_and_size",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -91,14 +93,14 @@
           ]
         }
       ],
-      "reason": "Requested models have no native audio input; full waveform-as-text feasibility needs a separate audit. No spectrogram substitution is silently made."
+      "reason": "The selected text/image model interfaces do not accept native audio. A spectrogram or waveform-text variant is possible but is a changed input protocol; full numeric-waveform context/cost is prohibitive for this budget."
     },
     {
       "benchmark_id": "B01",
       "title": "Spike sorting and event detection",
       "category": "B",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/B01",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -121,15 +123,16 @@
             "https://github.com/flatironinstitute/mountainsort5"
           ]
         }
-      ]
+      ],
+      "reason": "The retained voltage matrix has320000x32 samples (10.24million values). A full-recording numeric prompt exceeds context. Chunked spike sorting also requires cross-chunk unit-identity reconciliation, a different protocol not silently substituted."
     },
     {
       "benchmark_id": "B03",
       "title": "Rigid drift recovery from synthetic ephys rasters",
       "category": "B",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/B03",
-      "status": "adapter_or_resource_review_pending",
-      "protocol_status": "official_protocol_restoration_candidate",
+      "status": "complete_four_model_panel",
+      "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
         {
@@ -155,14 +158,16 @@
             "https://www.eneuro.org/content/12/3/ENEURO.0529-24.2025"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/B03/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "B07",
       "title": "Lossless Neuropixels voltage compression",
       "category": "B",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/B07",
-      "status": "deferred_direct_bitstream_output_budget",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -190,14 +195,14 @@
           ]
         }
       ],
-      "reason": "Exact compression bitstream generation at the retained recording size is not a bounded direct-prediction pilot; no generated codec will be executed."
+      "reason": "Each input chunk is4096x384 int16 samples. Direct compression requires a verifiable lossless encoded bitstream, not model-written codec code. Full input/output resources exceed this bounded study; no compression score is inferred from a textual codec description."
     },
     {
       "benchmark_id": "B08",
       "title": "Timing-bounded spike-event compression",
       "category": "B",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/B08",
-      "status": "deferred_direct_bitstream_output_budget",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -222,14 +227,14 @@
           ]
         }
       ],
-      "reason": "Exact compression bitstream generation at the retained recording size is not a bounded direct-prediction pilot; no generated codec will be executed."
+      "reason": "Seven full event streams contain about1.05million events. Exact reconstruction/timing validation needs actual bitstreams and the declared decoder; no codec-generating program will be substituted. A streaming protocol is future work."
     },
     {
       "benchmark_id": "C05",
       "title": "Calcium-to-spike inference",
       "category": "C",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/C05",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -256,15 +261,16 @@
             "https://github.com/detimage123/SpikeSSL"
           ]
         }
-      ]
+      ],
+      "reason": "The five retained preparations require framewise expected-spike outputs for every valid calcium trace. Native full traces/output panels exceed this study budget. Windowing or a prospectively fixed subset is possible, but is not the same full benchmark."
     },
     {
       "benchmark_id": "C06",
       "title": "Calcium to electrical expected spike counts",
       "category": "C",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/C06",
-      "status": "adapter_or_resource_review_pending",
-      "protocol_status": "official_protocol_restoration_candidate",
+      "status": "partial_model_panel",
+      "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
         {
@@ -290,15 +296,17 @@
             "https://github.com/detimage123/SpikeSSL"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/C06/run-report.md",
+      "reason": "GPT-5 dense outputs truncated; further recovery not completed within the cumulative study cap."
     },
     {
       "benchmark_id": "D02",
       "title": "Current-to-voltage prediction",
       "category": "D",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/D02",
-      "status": "adapter_or_resource_review_pending",
-      "protocol_status": "official_protocol_restoration_candidate",
+      "status": "complete_four_model_panel",
+      "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
         {
@@ -322,14 +330,16 @@
             "https://github.com/xanderladd/axonstandardized"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/D02/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "E01",
       "title": "Neural rate inference and co-smoothing",
       "category": "E",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/E01",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -353,14 +363,15 @@
             "https://neurallatents.github.io/challenge.html"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "E06",
       "title": "Causal population calcium forecasting",
       "category": "E",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/E06",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -387,14 +398,15 @@
             "https://github.com/google-research/zapbench"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "F04",
       "title": "Retinal or other sensory encoding",
       "category": "F",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/F04",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -421,14 +433,15 @@
             "https://open-retina.org/package_docs/training/core_readout/"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "G01",
       "title": "Robust cross-day motor decoding",
       "category": "G",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/G01",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -450,14 +463,15 @@
             "https://arxiv.org/abs/2609.39080"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "H01",
       "title": "Motor imagery and noninvasive BCI",
       "category": "H",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/H01",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -480,19 +494,20 @@
             "https://arxiv.org/abs/2507.20254"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "H02",
       "title": "ERP/P300 target decoding",
       "category": "H",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/H02",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
         {
-          "name": "xDAWN covariance → tangent-space SVM",
+          "name": "xDAWN covariance \u2192 tangent-space SVM",
           "urls": [
             "https://moabb.neurotechx.com/docs/paper_results.html",
             "https://arxiv.org/abs/2404.15319"
@@ -512,14 +527,15 @@
             "https://arxiv.org/abs/2601.17883"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "H08",
       "title": "Sleep staging and sleep onset",
       "category": "H",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/H08",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -541,14 +557,15 @@
             "https://arxiv.org/abs/2609.06849"
           ]
         }
-      ]
+      ],
+      "reason": "Each retained night has1440x3000 raw EEG samples. A whole-night numeric prompt exceeds context; epoch/window processing changes available context and requires a separately frozen protocol and budget."
     },
     {
       "benchmark_id": "H16",
       "title": "EEG ocular/muscle artifact repair",
       "category": "H",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/H16",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -570,14 +587,15 @@
             "https://www.mdpi.com/2073-8994/18/6/988"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "I07",
       "title": "fNIRS motor/hemodynamic decoding",
       "category": "I",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/I07",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -600,14 +618,15 @@
             "https://www.nature.com/articles/s42003-025-08412-1"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "I10",
       "title": "MRI quality assessment across sites",
       "category": "I",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/I10",
-      "status": "prepared_full_test_prediction_requests",
+      "status": "complete_four_model_panel",
       "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -632,15 +651,17 @@
             "https://github.com/soda-inria/tabicl"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/I10/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "J08",
       "title": "Fluorescent synaptic puncta segmentation and quantification",
       "category": "J",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/J08",
-      "status": "adapter_or_resource_review_pending",
-      "protocol_status": "official_protocol_restoration_candidate",
+      "status": "complete_four_model_panel",
+      "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
         {
@@ -662,14 +683,16 @@
             "https://cellpose.readthedocs.io/en/latest/models.html"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/J08/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "K01",
       "title": "Electrophysiological cell-type classification",
       "category": "K",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K01",
-      "status": "prepared_full_test_prediction_requests",
+      "status": "complete_four_model_panel",
       "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -693,14 +716,16 @@
             "https://arxiv.org/abs/2602.11139"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/K01/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "K04",
       "title": "Cortical-layer label transfer",
       "category": "K",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K04",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -724,15 +749,16 @@
             "https://www.nature.com/articles/s41592-026-03194-8"
           ]
         }
-      ]
+      ],
+      "reason": "The sampled full-test numeric-input projection exceeds the remaining shared API budget or leaves insufficient room for required outputs/reasoning. Not a measured model failure. Subsampling/feature extraction/streaming could define a future separately frozen protocol; no partial score will be labeled full-test."
     },
     {
       "benchmark_id": "K05",
       "title": "Supervised bulk RNA to marker-positive fractions",
       "category": "K",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K05",
-      "status": "adapter_or_resource_review_pending",
-      "protocol_status": "official_protocol_restoration_candidate",
+      "status": "complete_four_model_panel",
+      "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
         {
@@ -755,14 +781,16 @@
             "https://pmc.ncbi.nlm.nih.gov/articles/PMC11245312/"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/K05/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "K06",
       "title": "Optotagged PV/SST classification from waveform",
       "category": "K",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/K06",
-      "status": "prepared_full_test_prediction_requests",
+      "status": "complete_four_model_panel",
       "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -784,15 +812,17 @@
             "https://www.nature.com/articles/s41467-026-71331-0"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/K06/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "L04",
       "title": "Point-process estimation and goodness of fit",
       "category": "L",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/L04",
-      "status": "adapter_or_resource_review_pending",
-      "protocol_status": "official_protocol_restoration_candidate",
+      "status": "complete_four_model_panel",
+      "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
         {
@@ -814,14 +844,16 @@
             "https://github.com/flatironinstitute/nemos"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/L04/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "L06",
       "title": "Spiking-neuron posterior inference",
       "category": "L",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/L06",
-      "status": "adapter_or_resource_review_pending",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -833,7 +865,7 @@
           ]
         },
         {
-          "name": "Longer independently initialized Polya–Gamma chains",
+          "name": "Longer independently initialized Polya\u2013Gamma chains",
           "urls": [
             "https://github.com/sbi-benchmark/sbibm"
           ]
@@ -844,14 +876,15 @@
             "https://sbi.readthedocs.io/en/stable/how_to_guide/06_choosing_inference_method.html"
           ]
         }
-      ]
+      ],
+      "reason": "The retained scoring protocol requests10000 ten-dimensional posterior draws for each of10 observations:1million output scalars. Direct full posterior output exceeds the selected response budget. A posterior mean/covariance or generated sampler would be a different task; no sampler program is substituted."
     },
     {
       "benchmark_id": "M01",
       "title": "Conditional mouse-choice prediction",
       "category": "M",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/M01",
-      "status": "prepared_full_test_prediction_requests",
+      "status": "complete_four_model_panel",
       "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -876,15 +909,17 @@
             "https://www.nature.com/articles/s41593-021-01007-z.pdf"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/M01/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "M04",
       "title": "Cognitive model and parameter recovery",
       "category": "M",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/M04",
-      "status": "adapter_or_resource_review_pending",
-      "protocol_status": "official_protocol_restoration_candidate",
+      "status": "complete_four_model_panel",
+      "protocol_status": "retained_custom_protocol_fallback",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
         {
@@ -908,14 +943,16 @@
             "https://arxiv.org/abs/2602.07098"
           ]
         }
-      ]
+      ],
+      "run_report": "experiments/M04/run-report.md",
+      "reason": "All four complete"
     },
     {
       "benchmark_id": "N05",
       "title": "NWB data loading, units and reproducibility",
       "category": "N",
       "old_study_url": "https://github.com/chirag-7/neural-data-bench/tree/main/experiments/N05",
-      "status": "deferred_native_file_interface",
+      "status": "deferred_from_pilot",
       "protocol_status": "official_protocol_restoration_candidate",
       "specialist_status": "no_verified_matching_current_best_published_score",
       "candidate_sources": [
@@ -940,7 +977,7 @@
           ]
         }
       ],
-      "reason": "A general model cannot directly consume this binary NWB through the text/image-only prediction interface; an extraction tool would change the no-tools condition."
+      "reason": "The task is reading a binary NWB file. The chosen inference interface accepts text/images and forbids tools. Having a loader extract fields for the model would perform the task for it. A schema/text question variant would be a new task."
     }
   ]
 }

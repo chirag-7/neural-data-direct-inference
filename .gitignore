@@ -6,3 +6,6 @@ __pycache__/
 *.key
 api-access.json
 experiments/*/prompts/
+
+# Sites maintains its own nested source checkout; reviewable mirror is web/.
+website/

@@ -8,7 +8,7 @@ def main():
  ap.add_argument('--models',nargs='+',default=['gpt-4.1-2025-04-14','gpt-5-2025-08-07'],choices=['gpt-4.1-2025-04-14','gpt-5-2025-08-07']);ap.add_argument('--limit',type=int);ap.add_argument('--workers',type=int,default=4);args=ap.parse_args()
  ceiling=json.loads((ROOT/'registry/execution-routing.json').read_text())['api_ceiling_total_usd']
  seal=json.loads((ROOT/'registry/request-seal.json').read_text());rank={m:i for i,m in enumerate(seal['models'])}
- requests=[(sha,r) for sha,r in seal['requests'].items() if (not args.tasks or r['benchmark_id'] in args.tasks) and r['regime']==args.regime and r['model'] in args.models]
+ requests=[(sha,r) for sha,r in seal['requests'].items() if (not args.tasks or r['benchmark_id'] in args.tasks) and r['regime']==args.regime and r['model'] in args.models and r.get('active',True) and r.get('primary_include',True)]
  requests.sort(key=lambda x:(args.tasks.index(x[1]['benchmark_id']) if args.tasks else x[1]['benchmark_id'],x[1]['start'],rank[x[1]['model']]))
  requests=[(s,r) for s,r in requests if not (ROOT/f'results/attempts/{s}.json').exists()]
  if args.limit:requests=requests[:args.limit]
@@ -16,21 +16,22 @@ def main():
  rates={'gpt-4.1-2025-04-14':(2,8),'gpt-5-2025-08-07':(1.25,10),'gpt-5.6-sol':(4,20),'gpt-6.1-sol':(2,10)}
  # Upper bound treats every input token as a 1.25x cache write, even when cheaper.
  # Includes already dispatched attempts from previous invocations and in-flight reserves.
- budget={'usd':0.0};lock=threading.Lock()
- for apath in (ROOT/'results/attempts').glob('*.json'):
-  old=json.loads(apath.read_text());ir,orr=rates[old['model']]
-  if old.get('usage'):
-   u=old['usage'];budget['usd']+=(1.25*u['input_tokens']*ir+u['output_tokens']*orr)/1e6
-  elif old['status'] not in ('budget_deferred',):budget['usd']+=old.get('conservative_reservation_usd',0)
- # Deleted Sol prediction files must not erase their already-incurred API spending.
+ budget={'usd':0.0};lock=threading.Lock();quota_stop=threading.Event()
+ # The bridge ledger records forwarding and in-flight reservations across all runners.
+ # Withdrawn allowlist requests rejected before forwarding must not consume budget.
  ledger=ROOT/'results/api-usage.json'
  if ledger.exists():
-  ledger_upper=0.0
   for old in json.loads(ledger.read_text())['requests']:
+   if old.get('definitive_unbilled_rejection') or (old.get('http_status')==429 and ('credit_balance_exhausted' in old.get('error','') or 'insufficient_quota' in old.get('error',''))):continue
    ir,orr=rates[old['model']];u=old.get('usage',{})
-   ledger_upper+=(1.25*u['input_tokens']*ir+u['output_tokens']*orr)/1e6 if 'input_tokens' in u and 'output_tokens' in u else old.get('reserved_max_usd',0)
-  budget['usd']=max(budget['usd'],ledger_upper)
+   budget['usd']+=(1.25*u['input_tokens']*ir+u['output_tokens']*orr)/1e6 if 'input_tokens' in u and 'output_tokens' in u else old.get('reserved_max_usd',0)
+ else:
+  for apath in (ROOT/'results/attempts').glob('*.json'):
+   old=json.loads(apath.read_text());ir,orr=rates[old['model']];u=old.get('usage',{})
+   if u:budget['usd']+=(1.25*u['input_tokens']*ir+u['output_tokens']*orr)/1e6
+   elif old['status'] in ('dispatched','transport_error'):budget['usd']+=old.get('conservative_reservation_usd',0)
  def send(item):
+  if quota_stop.is_set():return dict(status='budget_deferred',reason='provider_credit_exhausted')
   digest,entry=item;request_file=ROOT/entry['request_path'];obj=json.loads(request_file.read_text())
   assert hashlib.sha256(json.dumps(obj,sort_keys=True,separators=(',',':')).encode()).hexdigest()==digest
   ir,orr=rates[entry['model']]
@@ -54,7 +55,11 @@ def main():
     actual_upper=(1.25*u['input_tokens']*ir+u['output_tokens']*orr)/1e6
     with lock:budget['usd']+=actual_upper-reservation
   except urllib.error.HTTPError as exc:
-   record.update(status='http_error',http_status=exc.code,error=exc.read().decode()[:2000])
+   msg=exc.read().decode()[:2000]
+   record.update(status='http_error',http_status=exc.code,error=msg)
+   if exc.code==429 and ('credit_balance_exhausted' in msg or 'insufficient_quota' in msg):
+    quota_stop.set()
+    with lock:budget['usd']-=reservation
   except Exception as exc:record.update(status='transport_error',error=str(exc))
   record['elapsed_seconds']=time.time()-record['started_unix'];path.write_text(json.dumps(record,indent=2)+'\n')
   print(json.dumps({k:record.get(k) for k in ['benchmark_id','model','start','stop','status','response_status','http_status','elapsed_seconds']}),flush=True)

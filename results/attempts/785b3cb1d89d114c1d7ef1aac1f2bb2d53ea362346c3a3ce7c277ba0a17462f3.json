@@ -1,0 +1,42 @@
+{
+  "benchmark_id": "D02",
+  "model": "gpt-5-2025-08-07",
+  "regime": "zero_shot",
+  "start": 0,
+  "stop": 1,
+  "request_path": "work/requests/785b3cb1d89d114c1d7ef1aac1f2bb2d53ea362346c3a3ce7c277ba0a17462f3.json",
+  "prompt_path": "experiments/D02/prompts/zero_shot-00000.txt",
+  "prompt_sha256": "4a67eb4dbed5df7bb86d6e333d8b419ebdb1c6296d48b6e82eeb72ebb2eb2903",
+  "source_data_sha256": "2a5f30d8b6f07f981a0cf2c6e7717543185ef3c8732a17e8bfefef500c7a49ca",
+  "n_predictions": 1,
+  "output_kind": "tensor",
+  "prediction_shape": [
+    100
+  ],
+  "bounds": null,
+  "primary_include": true,
+  "active": true,
+  "reasoning_effort": "low",
+  "model_configuration": "low_reasoning_recovery",
+  "request_sha256": "785b3cb1d89d114c1d7ef1aac1f2bb2d53ea362346c3a3ce7c277ba0a17462f3",
+  "status": "response_saved",
+  "started_unix": 1793588028.1110148,
+  "conservative_reservation_usd": 0.0988809375,
+  "response_status": "completed",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_sha256": "5c95ca38328e0931ce68cd0d33c5f1eee030b993292f3974e4df40db7fb80f89",
+  "response_path": "results/raw/785b3cb1d89d114c1d7ef1aac1f2bb2d53ea362346c3a3ce7c277ba0a17462f3.json",
+  "usage": {
+    "input_tokens": 4339,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1548,
+    "output_tokens_details": {
+      "reasoning_tokens": 1088
+    },
+    "total_tokens": 5887
+  },
+  "elapsed_seconds": 12.224266052246094
+}

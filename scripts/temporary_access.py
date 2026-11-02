@@ -1,10 +1,10 @@
 """Loopback credential intake; only sealed direct-prediction requests can leave."""
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-import hashlib,json,secrets,threading,time,urllib.request,urllib.error,urllib.parse
+import hashlib,json,secrets,threading,time,urllib.request,urllib.error,urllib.parse,os
 
 ROOT=Path(__file__).resolve().parents[1]
-NONCE=secrets.token_urlsafe(24)
+NONCE=os.environ.get('DIRECT_INFERENCE_BRIDGE_NONCE') or secrets.token_urlsafe(24)
 PORT=8768
 BASE='/'+NONCE
 ORIGIN=f'http://127.0.0.1:{PORT}'
@@ -22,8 +22,11 @@ MODELS={m:MODELS[m] for m in ('gpt-4.1-2025-04-14','gpt-5-2025-08-07')}
 ledger=ROOT/'results/api-usage.json'
 if ledger.exists():
  previous=json.loads(ledger.read_text());ROWS=previous['requests']
- DONE={r['request_sha256'] for r in ROWS}
+ DONE={r['request_sha256'] for r in ROWS if not (r.get('http_status')==429 and ('credit_balance_exhausted' in r.get('error','') or 'insufficient_quota' in r.get('error','')))}
  for r in ROWS:
+  if r.get('http_status')==429 and ('credit_balance_exhausted' in r.get('error','') or 'insufficient_quota' in r.get('error','')):
+   r['definitive_unbilled_rejection']=True
+   continue
   u=r.get('usage',{});ir,orr=RATES[r['model']]
   SPENT+=(1.25*u['input_tokens']*ir+u['output_tokens']*orr)/1e6 if 'input_tokens' in u and 'output_tokens' in u else r.get('reserved_max_usd',0)
 
@@ -76,7 +79,7 @@ class Handler(BaseHTTPRequestHandler):
    entry=seal['requests'][digest]
    assert obj.get('store') is False and not obj.get('tools')
    assert 0<obj['max_output_tokens']<=8192
-   assert entry['model']==model and entry['regime'] in ('zero_shot','few_shot_8')
+   assert entry['model']==model and entry['regime'] in ('zero_shot','few_shot_8','in_context_calibration')
   except (ValueError,KeyError,AssertionError,FileNotFoundError):return self.send(400,{'error':'Request is not sealed direct inference'})
   reserve=(1.25*len(raw)*rates[0]+obj['max_output_tokens']*rates[1])/1000000
   with LOCK:
@@ -105,6 +108,8 @@ class Handler(BaseHTTPRequestHandler):
    msg=exc.read().decode().replace(KEY,'[REDACTED]')
    if row is not None:
     with LOCK:
+     if exc.code==429 and ('credit_balance_exhausted' in msg or 'insufficient_quota' in msg):
+      SPENT-=reserve;DONE.discard(row['request_sha256']);row['definitive_unbilled_rejection']=True
      row.update(status='http_error',http_status=exc.code,error=msg[:1500]);persist()
    return self.send(exc.code,{'error':msg[:1500]})
   except Exception as exc:

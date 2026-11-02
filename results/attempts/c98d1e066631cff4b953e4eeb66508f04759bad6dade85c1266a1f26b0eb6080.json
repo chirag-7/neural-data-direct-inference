@@ -1,0 +1,36 @@
+{
+  "benchmark_id": "M01",
+  "model": "gpt-5-2025-08-07",
+  "regime": "zero_shot",
+  "start": 576,
+  "stop": 640,
+  "request_path": "work/requests/c98d1e066631cff4b953e4eeb66508f04759bad6dade85c1266a1f26b0eb6080.json",
+  "prompt_path": "experiments/M01/prompts/zero_shot-00576.txt",
+  "prompt_sha256": "722958ed44f0a2b51bc5ef88ad0d70330b2b3877d082bd159a12b1ee4d89aa41",
+  "source_data_sha256": "3ae8fd34be70bb7f3234ff470f6a6e40c3cbd3c5be5a4466cfa410cd293e841b",
+  "n_predictions": 64,
+  "primary_include": true,
+  "model_configuration": "low_reasoning_recovery",
+  "repair": "Full test rerun at low reasoning after medium64/medium16 truncation. No scientific input changes or accuracy feedback.",
+  "request_sha256": "c98d1e066631cff4b953e4eeb66508f04759bad6dade85c1266a1f26b0eb6080",
+  "status": "response_saved",
+  "started_unix": 1793587073.694418,
+  "conservative_reservation_usd": 0.0947121875,
+  "response_status": "incomplete",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_sha256": "4618e73abb98712af41bff75619ff64626e2830335033c7b98f388035f49e68d",
+  "response_path": "results/raw/c98d1e066631cff4b953e4eeb66508f04759bad6dade85c1266a1f26b0eb6080.json",
+  "usage": {
+    "input_tokens": 4376,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 8192,
+    "output_tokens_details": {
+      "reasoning_tokens": 8000
+    },
+    "total_tokens": 12568
+  },
+  "elapsed_seconds": 50.17419099807739
+}

@@ -1,0 +1,128 @@
+{
+  "id": "resp_0cec9f2f2cb0c1c4016ae7f7785fc487d284c492cebbe35e43",
+  "object": "response",
+  "created_at": 1793587064,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793587067,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 2048,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_0cec9f2f2cb0c1c4016ae7f778baa087d29ee1e9c0a0a1f0ce",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":960,\"value\":0.27},{\"id\":961,\"value\":0.22},{\"id\":962,\"value\":0.18},{\"id\":963,\"value\":0.08},{\"id\":964,\"value\":0.2},{\"id\":965,\"value\":0.08},{\"id\":966,\"value\":0.07},{\"id\":967,\"value\":0.89},{\"id\":968,\"value\":0.52},{\"id\":969,\"value\":0.87},{\"id\":970,\"value\":0.77},{\"id\":971,\"value\":0.75},{\"id\":972,\"value\":0.13},{\"id\":973,\"value\":0.19},{\"id\":974,\"value\":0.92},{\"id\":975,\"value\":0.21},{\"id\":976,\"value\":0.13},{\"id\":977,\"value\":0.17},{\"id\":978,\"value\":0.14},{\"id\":979,\"value\":0.61},{\"id\":980,\"value\":0.51},{\"id\":981,\"value\":0.19},{\"id\":982,\"value\":0.66},{\"id\":983,\"value\":0.22},{\"id\":984,\"value\":0.13},{\"id\":985,\"value\":0.12},{\"id\":986,\"value\":0.19},{\"id\":987,\"value\":0.41},{\"id\":988,\"value\":0.77},{\"id\":989,\"value\":0.71},{\"id\":990,\"value\":0.76},{\"id\":991,\"value\":0.14},{\"id\":992,\"value\":0.83},{\"id\":993,\"value\":0.98},{\"id\":994,\"value\":0.89},{\"id\":995,\"value\":0.88},{\"id\":996,\"value\":0.22},{\"id\":997,\"value\":0.99},{\"id\":998,\"value\":0.73},{\"id\":999,\"value\":0.41},{\"id\":1000,\"value\":0.87},{\"id\":1001,\"value\":0.79},{\"id\":1002,\"value\":0.59},{\"id\":1003,\"value\":0.17},{\"id\":1004,\"value\":0.13},{\"id\":1005,\"value\":0.63},{\"id\":1006,\"value\":0.09},{\"id\":1007,\"value\":0.95},{\"id\":1008,\"value\":0.07},{\"id\":1009,\"value\":0.29},{\"id\":1010,\"value\":0.15},{\"id\":1011,\"value\":0.85},{\"id\":1012,\"value\":0.78},{\"id\":1013,\"value\":0.52},{\"id\":1014,\"value\":0.67},{\"id\":1015,\"value\":0.92},{\"id\":1016,\"value\":0.56},{\"id\":1017,\"value\":0.34},{\"id\":1018,\"value\":0.79},{\"id\":1019,\"value\":0.82},{\"id\":1020,\"value\":0.22},{\"id\":1021,\"value\":0.46},{\"id\":1022,\"value\":0.95},{\"id\":1023,\"value\":0.53}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 64,
+            "maxItems": 64
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4397,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 671,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5068
+  },
+  "user": null,
+  "metadata": {}
+}

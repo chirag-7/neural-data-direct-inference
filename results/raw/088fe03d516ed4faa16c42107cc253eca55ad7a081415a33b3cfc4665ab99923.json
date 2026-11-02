@@ -1,0 +1,128 @@
+{
+  "id": "resp_06ea7124bfcc667d016ae7f783b8fc87d281a9991ced8bc7e2",
+  "object": "response",
+  "created_at": 1793587075,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1793587079,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": 2048,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "msg_06ea7124bfcc667d016ae7f784216087d29ecafa83bc0f3600",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"predictions\":[{\"id\":1600,\"value\":0.26},{\"id\":1601,\"value\":0.92},{\"id\":1602,\"value\":0.09},{\"id\":1603,\"value\":0.18},{\"id\":1604,\"value\":0.05},{\"id\":1605,\"value\":0.15},{\"id\":1606,\"value\":0.22},{\"id\":1607,\"value\":0.43},{\"id\":1608,\"value\":0.78},{\"id\":1609,\"value\":0.25},{\"id\":1610,\"value\":0.65},{\"id\":1611,\"value\":0.31},{\"id\":1612,\"value\":0.71},{\"id\":1613,\"value\":0.73},{\"id\":1614,\"value\":0.37},{\"id\":1615,\"value\":0.85},{\"id\":1616,\"value\":0.87},{\"id\":1617,\"value\":0.22},{\"id\":1618,\"value\":0.18},{\"id\":1619,\"value\":0.14},{\"id\":1620,\"value\":0.10},{\"id\":1621,\"value\":0.16},{\"id\":1622,\"value\":0.16},{\"id\":1623,\"value\":0.17},{\"id\":1624,\"value\":0.16},{\"id\":1625,\"value\":0.15},{\"id\":1626,\"value\":0.16},{\"id\":1627,\"value\":0.09},{\"id\":1628,\"value\":0.71},{\"id\":1629,\"value\":0.77},{\"id\":1630,\"value\":0.89},{\"id\":1631,\"value\":0.21},{\"id\":1632,\"value\":0.21},{\"id\":1633,\"value\":0.10},{\"id\":1634,\"value\":0.15},{\"id\":1635,\"value\":0.38},{\"id\":1636,\"value\":0.13},{\"id\":1637,\"value\":0.15},{\"id\":1638,\"value\":0.23},{\"id\":1639,\"value\":0.15},{\"id\":1640,\"value\":0.16},{\"id\":1641,\"value\":0.18},{\"id\":1642,\"value\":0.25},{\"id\":1643,\"value\":0.14},{\"id\":1644,\"value\":0.15},{\"id\":1645,\"value\":0.14},{\"id\":1646,\"value\":0.25},{\"id\":1647,\"value\":0.22},{\"id\":1648,\"value\":0.65},{\"id\":1649,\"value\":0.22},{\"id\":1650,\"value\":0.85},{\"id\":1651,\"value\":0.88},{\"id\":1652,\"value\":0.54},{\"id\":1653,\"value\":0.98},{\"id\":1654,\"value\":0.85},{\"id\":1655,\"value\":0.93},{\"id\":1656,\"value\":0.84},{\"id\":1657,\"value\":0.92},{\"id\":1658,\"value\":0.96},{\"id\":1659,\"value\":0.10},{\"id\":1660,\"value\":0.15},{\"id\":1661,\"value\":0.13},{\"id\":1662,\"value\":0.14},{\"id\":1663,\"value\":0.09}]}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "direct_predictions",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "predictions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "id",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 64,
+            "maxItems": 64
+          }
+        },
+        "required": [
+          "predictions"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4504,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 711,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5215
+  },
+  "user": null,
+  "metadata": {}
+}
